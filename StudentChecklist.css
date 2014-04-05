@@ -1,0 +1,12 @@
+#SideBarContents {
+    list-style-type: none;
+    color: black;
+    width: 40px;
+    border-right-style: solid;
+    border-right-color: maroon;
+}
+
+li {
+    text-align: left;
+}
+
