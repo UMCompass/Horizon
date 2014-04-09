@@ -69,16 +69,13 @@
 		}
 		
 		private function getList() {
-		global $db;
-		$a = array();
-		$result = $db->query("SELECT Item,Age FROM CheckList ");
-	 	while($row = $result->fetch_assoc()) {	 
-			 echo "List Item: " . $row['Item'] . " Num: " . $row['Age'] . "<br />";
-			// array_push($a, $row);
-	 	} 
-			
-		//	$row = $result->fetch_assoc();
-	 	//echo json_encode($a);
+			global $db;
+			$a = array();
+			$result = $db->query("SELECT Item,Age FROM CheckList ");
+	 		while($row = $result->fetch_assoc()) {	 
+				 echo "List Item: " . $row['Item'] . " Num: " . $row['Age'] . "<br />";
+		
+		 	} 
  		}
 	}	
 	
