@@ -21,7 +21,39 @@ function initializeSideBar(database) {
 }
 
 $(document).ready(function(){
-    console.log( "ready!" );
     initializeSideBar(database);
+
+    $("#register").click(function(){
+        var mainWindow = document.getElementById("mainWindow");
+        mainWindow.empty();
+        mainWindow = document.createElement("form");
+        var nameLabel = document.createElement("label");
+        var name = document.createElement("input");
+        nameLabel.setAttribute("for", "name");
+        nameLabel.innerHTML = "Name";
+        name.setAttribute("id", "name");
+        name.setAttribute("type", "text");
+        name.setAttribute("name", "name");
+        var usernameLabel = document.createElement("label");
+        var username = document.createElement("input");
+        usernameLabel.setAttribute("for", "username");
+        usernameLabel.innerHTML = "Username";
+        username.setAttribute("id", "username");
+        username.setAttribute("type", "text");
+        username.setAttribute("name", "username");
+        var passwordLabel = document.createElement("label");
+        var password = document.createElement("input");
+        passwordLabel.setAttribute("for", "password");
+        passwordLabel.innerHTML = "password";
+        password.setAttribute("id", "password");
+        password.setAttribute("type", "password");
+        password.setAttribute("name", "password");
+        mainWindow.appendChild(nameLabel);
+        mainWindow.appendChild(name);
+        mainWindow.appendChild(usernameLabel);
+        mainWindow.appendChild(username);
+        mainWindow.appendChild(passwordLabel);
+        mainWindow.appendChild(password);
+    })
 
 });
