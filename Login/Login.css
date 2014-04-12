@@ -1,0 +1,59 @@
+
+#sidebar{
+    position: fixed;
+    height: 120%;
+    width: 200px;
+    overflow: auto;
+    background-color: #800000;
+    top: 0;
+    bottom: 0;
+    margin-left: -10px;
+}
+
+form{
+    position: relative;
+    top: 0;
+    padding-left: 15%;
+    padding-top: 40%;
+    padding-bottom: 5px;
+    padding-right: 20%;
+    margin-top: 0;
+    margin-bottom: 0;
+    color:white;
+    cursor:default;
+}
+
+input{
+    margin-bottom: 10%;
+}
+
+label{
+    font-family: "Euphemia UCAS";
+    font-size: 18pt;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+#compass{
+    position: relative;
+    padding-top: 200%;
+    padding-left: 4%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-size: 16pt;
+    font-family: "Euphemia UCAS";
+    color:white;
+}
+
+#horizon{
+    position: relative;
+    margin-top: 0;
+    padding-left: 59%;
+    font-family: "Euphemia UCAS";
+    color:white;
+}
+
+#welcom{
+    margin-left: 200px;
+}
+
