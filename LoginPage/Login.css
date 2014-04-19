@@ -1,0 +1,123 @@
+
+#everything{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    margin: 0;
+}
+
+#sidebar{
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 20%;
+    /*overflow: auto;*/
+    background-color: #800000;
+    top: 0;
+    bottom: 0;
+}
+
+#sidebar form{
+    position: relative;
+    top: 0;
+    padding-left: 15%;
+    padding-top: 40%;
+    padding-bottom: 5%;
+    padding-right: 20%;
+    color:white;
+    cursor:default;
+}
+
+#sidebar input{
+    position: relative;
+    margin-bottom: 10%;
+}
+
+#sidebar label{
+    position: relative;
+    font-family: "Euphemia UCAS";
+    font-size: 18pt;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+#register{
+    position: relative;
+    color: white;
+    font-family: "Euphemia UCAS";
+    font-size: 8pt;
+    padding-left: 15.5%;
+    margin-top: -10%;
+    cursor: default;
+}
+
+#bar{
+    float:left;
+    position: absolute;
+    background-color: black;
+    width:10px;
+    height:100%;
+    top: 0px;
+    right:0px;
+}
+
+#compass {
+    float: right;
+    position: absolute;
+    left: 5%;
+    top: 90%;
+    color: #FFCCCC;
+    font-size: 16pt;
+    font-family: "Euphemia UCAS";
+    font-weight: bold;
+}
+
+#horizon{
+    float:left;
+    position: absolute;
+    left: 15%;
+    top: 93%;
+    color: #FFCCCC;
+    font-size: 12;
+    font-family: "Euphemia UCAS";
+    font-weight: bold;
+}
+
+#center {
+    float: left;
+    position: relative;
+    left: 0;
+    top: 0;
+    font-family: "Euphemia UCAS";
+}
+
+#center header{
+    font-size: 30pt;
+    color: #800000;
+}
+
+#center form{
+    position: relative;
+    padding-top: 50%;
+    left: 50%;
+
+}
+
+#center input{
+    position: relative;
+    margin-bottom: 10%;
+    left: 30%
+}
+
+#center label{
+    position: relative;
+    font-family: "Euphemia UCAS";
+    font-size: 18pt;
+    font-weight: bold;
+    line-height: 120%;
+    color: #800000;
+}
+
