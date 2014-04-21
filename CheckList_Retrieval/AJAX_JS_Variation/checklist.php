@@ -6,10 +6,58 @@
 
 <script type="text/javascript">
 
+function setInAction(x) {
+		if(x == '10') {
+			$.ajax({
+			  type: 'post',
+			  url: 'test.php', 
+			  data: {regs: "10"}, 
+			  dataType: 'json',  
+			  success: function(data)        
+			  {
+		
+			    for (var i in data)
+			    {         
+				 $('#linked').append("<b>Item "+(parseInt(i)+1)+": </b>"+ x +"<b> name: </b>"+ data[i].Item + "</li>" +'\n');
+			    }
+				
+			   
+			  } 
+			});
+		}
+		
+		else if(x == '12') {
+					$.ajax({
+					  type: 'post',
+					  url: 'test.php', 
+					  data: {regs: "12"}, 
+					  dataType: 'json',  
+					  success: function(data)        
+					  {
+		
+					    for (var i in data)
+					    {         
+						 $('#linked').append("<b>Item "+(parseInt(i)+1)+": </b>"+ x +"<b> name: </b>"+ data[i].Item + "</li>" +'\n');
+					    }
+				
+			   
+					  } 
+					});
+				}
+	}
+
 $(document).ready(function() {
+	
+	
+	
+	function click(id) {
+		
+		$('#'+id).append("<li> "+ id + "</li>");
+		
+	}
 			
 			$.ajax({
-				type: 'post',
+			  type: 'post',
 			  url: 'test.php', 
 			  data: {regs: "success"}, 
 			  dataType: 'json',  
@@ -18,62 +66,34 @@ $(document).ready(function() {
 		
 			    for (var i in data)
 			    {         
-			      $('#info').append("<b>id: </b>"+ data[i].Age +"<b> name: </b>"+ data[i].Item + "<br />");
+				 $('#info').append("<a href='#' onclick='setInAction("+data[i].Age+")'> <b> name: </b>"+ data[i].Item + "<br />");
 			    }
 				
 			   
 			  } 
 			});
-			
-			
-			$("#info").on("click", function(e) {
-			        e.preventDefault();
-					
-					$.ajax({
-						type: 'post',
-					  url: 'test.php', 
-					  data: {regs: "success"}, 
-					  dataType: 'json',  
-					  success: function(data)        
-					  {
-		
-					    for (var i in data)
-					    {         
-					      $('#linked').append("<li id="+data[i].Age+"><b>id: </b>"+ data[i].Age +"<b> name: </b>"+ data[i].Item + "</li>");
-					    }
 				
-			   
-					  } 
-					});
-					
-			});
-			
-			$("ul").on("click", function(e) {
+			$("#linked").on("click", function(e) {
 			        e.preventDefault();
-					
-					var idd = $("li")[0].id;
-					var stuff = $('#'+idd);
-					var that = stuff;
-					
-						
-								$('#single').append(that);
-						
-					
-			});
+								$('#single').append($(this).attr('id'));
+			}); 
+			
+			
 
 });
 </script>
 <style>
 
 #linked {
-	width: 300px;
+	width: 450px;
 	position: relative;
-	height: 100px;
+	height: 250px;
 	overflow: auto;
 	background-color: beige;
 	margin-left: auto;
 	margin-right: auto;
 	top: -220px;
+	
 }
 
 #single {
@@ -100,7 +120,7 @@ $(document).ready(function() {
 	</div>
 	
 	<div id= "right">
-		<ul id="single">
+		<ul class="single">
 		</ul>
 	</div>
 
