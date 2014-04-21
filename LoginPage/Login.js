@@ -20,33 +20,13 @@ database = {
     sidebar.appendChild(horizon);
 }*/
 
-/*exports.authorize = function (req, res) {
-    var username = req.body.username;
-    var password = req.body.password;
-    if (!username || !password) {
-        req.flash('authorize', 'Must provide username and password');
-        res.redirect('/');
-    }
-    else {
-        users.validate(username, password, function (err, user) {
-            if (err) {
-                req.flash('authorize', err);
-                res.redirect('/');
-            }
-            else {
-                req.session.user = user;
-                res.redirect('/posts');
-            }
-        });
-    }
-};*/
-
 $(document).ready(function(){
     /*initializeSideBar(database);*/
 
     $("#register").click(function(){
         var center = document.getElementById("center");
         center.innerHTML = '' +
+            '<div id="title">New User Registration</div>' +
             '<form action="database">' +
                 '<label for="newUsername">Username:</label><br>' +
                 '<input id="newUsername" type="text" name="username"><br>' +
@@ -56,7 +36,7 @@ $(document).ready(function(){
                 '<input id="newPassword2" type="password" name="password"><br>' +
                 '<label for="newEmail">Email:</label><br>' +
                 '<input id="newEmail" type="text" name="email"><br>' +
-                '<input type="submit" value="Create">' +
+                '<input id="submit" type="submit" value="Create">' +
             '</form>';
     })
 

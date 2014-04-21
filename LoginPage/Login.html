@@ -5,12 +5,13 @@
     <link rel="stylesheet" type="text/css" href="Login.css">
     <script src="../jquery-1.11.0.min.js"></script>
     <script src="Login.js"></script>
+    <script src="../Routes/index.js"></script>
 </head>
 
 <body>
     <div id="everything">
-        <div id="sidebar">
-            <form action="authorize">
+        <div id="leftside">
+            <form action="../Routes/index.js.authorize">
                 <label for="username">Username:</label>
                 <input id="username" type="text" name="username"><br>
                 <label for="password">Password:</label>
@@ -23,9 +24,10 @@
             <div id='bar'></div>
         </div>
         <div id="center">
-            <header>Welcome to Compass!</header>
-            <p>We're here to help you navigate the difficult bureaucratic tasks required by your school.  That way you can focus on your studies and on having fun!  Log in and take a look around!
-                It's free and fun!</p>
+            <div id="title">Welcome to Compass!</div>
+            <div id="intro">HORIZON provides SOLUTIONS! We've STREAMLINED tasks so you don't have too! Horizon's NOVEL approach to
+                USABILITY and SIMPLICITY helps you accomplish TASKS!  Create an account to gain access to our STREAMLINED
+                SOLUTION to your problems!  Help SHAPE your future with the POWERFUL TOOLS provided by HORIZON! TL;DR Lorem Ipsum!</div>
         </div>
     </div>
 </body>

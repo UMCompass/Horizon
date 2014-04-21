@@ -13,7 +13,7 @@ body{
 Formatting the left hand side
 */
 
-#leftside {
+#leftside{
     position: relative;
     float: left;
     height: 100%;
@@ -23,38 +23,59 @@ Formatting the left hand side
     bottom: 0;
 }
 
-#leftside form{
+#sidebar{
     position: relative;
-    top: 0;
-    padding-left: 15%;
-    padding-top: 40%;
-    padding-bottom: 5%;
-    padding-right: 20%;
-    color:white;
-    cursor:default;
+    height: 60%;
+    width: 100%;
+    /*overflow: auto;*/
+    background-color: #800000;
+    top: 20%;
 }
 
-#leftside input{
-    position: relative;
-    margin-bottom: 10%;
+
+#sidebar::-webkit-scrollbar {
+    display: none;
 }
 
-#leftside label{
+
+#sidebarMenu{
+    float:left;
+    width:75%;
     position: relative;
+    top: 0px;
+    list-style-type: none;
+    padding-left: 0px;
+    padding-top: 2px;
+    padding-bottom: 0px;
+    padding-right: 15%;
+    margin-top: 0px;
+    margin-bottom: 0px;
     font-family: "Euphemia UCAS";
     font-size: 18pt;
-    font-weight: bold;
     line-height: 120%;
+    text-indent: 40px;
+    color:white;
+    vertical-align: middle;
+    font-weight: bold;
+    cursor: default;
 }
 
-#register{
-    position: relative;
-    color: white;
-    font-family: "Euphemia UCAS";
-    font-size: 8pt;
-    padding-left: 15.5%;
-    margin-top: -10%;
-    cursor: default;
+#sidebar li{
+    padding-top: 1px;
+    padding-bottom: 3px;
+
+}
+
+.selected{
+    background-color: #FFCC00;
+    color: black;
+    text-align: right;
+    padding-right: 6px;
+}
+
+
+:not(.selected):hover{
+    color: black;
 }
 
 #bar{
@@ -67,7 +88,7 @@ Formatting the left hand side
     right:0px;
 }
 
-#compass {
+#compass{
     float: right;
     position: absolute;
     left: 5%;
@@ -79,12 +100,12 @@ Formatting the left hand side
 }
 
 #horizon{
-    float:left;
+    float: left;
     position: absolute;
     left: 15%;
     top: 93%;
     color: #FFCCCC;
-    font-size: 12;
+    font-size: 12pt;
     font-family: "Euphemia UCAS";
     font-weight: bold;
 }
@@ -101,31 +122,19 @@ Formatting the left hand side
 
 #center #title{
     position: relative;
+    width: 50%;
     top: 10%;
     left: 10%;
-    width: 50%;
+    padding-bottom: 1%;
     font-size: 30pt;
     font-weight: bold;
     color: #800000;
-    padding-bottom: 1%;
-}
-
-#center #intro{
-    border-top: solid;
-    padding-top: 1%;
-    position: relative;
-    top: 10%;
-    left: 10%;
-    width: 60%;
-    text-align: justify;
-    text-justify: inter-word;
-    font-size: 14pt;
 }
 
 #center form{
     border-top: solid;
-    padding-top: 1%;
     position: relative;
+    padding-top: 1%;
     top: 10%;
     left: 10%;
     width: 50%;
@@ -149,4 +158,3 @@ Formatting the left hand side
     line-height: 120%;
     color: #800000;
 }
-
