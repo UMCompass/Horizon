@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1218ccf-37cc-42c4-b652-6b15de0bdad5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SettingsPage/Settings.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SettingsPage/Settings.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SettingsPage/Settings.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Checklist/checklist.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Routes/index.js" />
-      <change type="DELETED" beforePath="C:\Users\John\Documents\GitHub\Horizon\checklist.html" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\John\Documents\GitHub\Horizon\scripting.js" afterPath="$PROJECT_DIR$/Checklist/scripting.js" />
-      <change type="MOVED" beforePath="C:\Users\John\Documents\GitHub\Horizon\styling.css" afterPath="$PROJECT_DIR$/Checklist/styling.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoginPage/Login.css" afterPath="$PROJECT_DIR$/LoginPage/Login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoginPage/Login.html" afterPath="$PROJECT_DIR$/LoginPage/Login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoginPage/Login.js" afterPath="$PROJECT_DIR$/LoginPage/Login.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SettingsPage/Settings.js" afterPath="$PROJECT_DIR$/SettingsPage/Settings.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Routes/index.js" afterPath="$PROJECT_DIR$/Routes/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Horizon.iws" />
@@ -36,64 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="checklist.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Checklist/checklist.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="38" selection-start="524" selection-end="546" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="646">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scripting.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Checklist/scripting.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="12" selection-start="5059" selection-end="5059" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="3366">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styling.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Checklist/styling.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="25" selection-start="1803" selection-end="1803" vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="4267">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/LoginPage/Login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="33" selection-start="550" selection-end="550" vertical-scroll-proportion="0.33962265" vertical-offset="0" max-vertical-offset="901">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LoginPage/Login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="25" selection-start="956" selection-end="956" vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="663">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LoginPage/Login.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="14" selection-start="1698" selection-end="1698" vertical-scroll-proportion="0.0" vertical-offset="1683" max-vertical-offset="2686">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Settings.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SettingsPage/Settings.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="25" selection-start="775" selection-end="775" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="561">
+            <state line="24" column="25" selection-start="775" selection-end="775" vertical-scroll-proportion="-17.032259" vertical-offset="0" max-vertical-offset="726">
               <folding />
             </state>
           </provider>
@@ -102,7 +41,43 @@
       <file leaf-file-name="Settings.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SettingsPage/Settings.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="37" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+            <state line="39" column="1" selection-start="1668" selection-end="1668" vertical-scroll-proportion="0.0" vertical-offset="418" max-vertical-offset="1342">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="25" selection-start="25" selection-end="25" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="462">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="25" selection-start="25" selection-end="25" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1232">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LoginPage/Login.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="112" column="14" selection-start="1698" selection-end="1698" vertical-scroll-proportion="0.0" vertical-offset="2442" max-vertical-offset="3476">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LoginPage/Login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="6" selection-start="277" selection-end="277" vertical-scroll-proportion="-7.096774" vertical-offset="0" max-vertical-offset="858">
               <folding />
             </state>
           </provider>
@@ -111,18 +86,18 @@
       <file leaf-file-name="Settings.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SettingsPage/Settings.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="19" selection-start="2044" selection-end="2044" vertical-scroll-proportion="0.0" vertical-offset="1751" max-vertical-offset="2805">
+            <state line="136" column="19" selection-start="2044" selection-end="2044" vertical-scroll-proportion="0.0" vertical-offset="2992" max-vertical-offset="3630">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="28" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+            <state line="59" column="36" selection-start="2235" selection-end="2235" vertical-scroll-proportion="0.8046615" vertical-offset="573" max-vertical-offset="1474">
               <folding>
-                <element signature="e#0#38#0" expanded="false" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -152,15 +127,17 @@
         <option value="$PROJECT_DIR$/Login/Login.css" />
         <option value="$PROJECT_DIR$/Login/Login.js" />
         <option value="$USER_HOME$/Downloads/styling.css" />
-        <option value="$PROJECT_DIR$/Routes/index.js" />
         <option value="$PROJECT_DIR$/Checklist/checklist.html" />
         <option value="$PROJECT_DIR$/Checklist/styling.css" />
         <option value="$PROJECT_DIR$/SettingsPage/Settings.css" />
         <option value="$PROJECT_DIR$/SettingsPage/Settings.html" />
-        <option value="$PROJECT_DIR$/SettingsPage/Settings.js" />
         <option value="$PROJECT_DIR$/LoginPage/Login.html" />
         <option value="$PROJECT_DIR$/LoginPage/Login.css" />
         <option value="$PROJECT_DIR$/LoginPage/Login.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/SettingsPage/Settings.js" />
+        <option value="$PROJECT_DIR$/Routes/index.js" />
       </list>
     </option>
   </component>
@@ -196,7 +173,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -253,6 +229,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="connect-flash" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="LoginPage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -281,18 +289,55 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="CheckList_Retrieval" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ALL PHP Variation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CheckList_Retrieval" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AJAX_JS_Variation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Horizon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Checklist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../UMass/Semester 6 Spring 2014/CmpSci 326/Workshop5" />
-    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -300,11 +345,22 @@
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\John\Documents\GitHub\Horizon" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\John\Documents\GitHub\Horizon\Checklist" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -315,23 +371,15 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -344,6 +392,23 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="d1218ccf-37cc-42c4-b652-6b15de0bdad5" name="Default" comment="" />
@@ -368,11 +433,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -392,25 +457,86 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Downloads/checklist.html">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="32" selection-start="285" selection-end="385" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="595">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1188">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SettingsPage/Settings.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="19" selection-start="2044" selection-end="2044" vertical-scroll-proportion="0.0" vertical-offset="2992" max-vertical-offset="3630">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="28" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="286" max-vertical-offset="682">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Checklist/scripting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="12" selection-start="5059" selection-end="5059" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="4356">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Checklist/styling.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="25" selection-start="1803" selection-end="1803" vertical-scroll-proportion="0.0" vertical-offset="3168" max-vertical-offset="5522">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SettingsPage/Settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="25" selection-start="775" selection-end="775" vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="726">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SettingsPage/Settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="30" selection-start="2640" selection-end="2640" vertical-scroll-proportion="0.0" vertical-offset="1518" max-vertical-offset="2112">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SettingsPage/Settings.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="19" selection-start="2044" selection-end="2044" vertical-scroll-proportion="0.0" vertical-offset="2992" max-vertical-offset="3630">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="28" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="286" max-vertical-offset="682">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/checklist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="32" selection-start="285" selection-end="385" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="595" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Downloads/styling.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="22" selection-start="1285" selection-end="1423" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="3434">
-          <folding />
-        </state>
+        <state line="110" column="22" selection-start="1285" selection-end="1423" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="3434" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LoginPage/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="4" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1156">
-          <folding />
-        </state>
+        <state line="41" column="4" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1156" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LoginPage/Login.html">
@@ -422,9 +548,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LoginPage/Login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="19" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2193">
-          <folding />
-        </state>
+        <state line="120" column="19" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2193" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Checklist/checklist.html">
@@ -457,16 +581,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LoginPage/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="46" selection-start="1450" selection-end="1450" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="1105">
-          <folding />
-        </state>
+        <state line="41" column="46" selection-start="1450" selection-end="1450" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="1105" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LoginPage/Login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="19" selection-start="834" selection-end="834" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="1598">
-          <folding />
-        </state>
+        <state line="53" column="19" selection-start="834" selection-end="834" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="1598" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Checklist/checklist.html">
@@ -499,16 +619,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LoginPage/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="46" selection-start="1450" selection-end="1450" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="1071">
-          <folding />
-        </state>
+        <state line="41" column="46" selection-start="1450" selection-end="1450" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="1071" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LoginPage/Login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="19" selection-start="834" selection-end="834" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="1598">
-          <folding />
-        </state>
+        <state line="53" column="19" selection-start="834" selection-end="834" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="1598" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Checklist/checklist.html">
@@ -541,49 +657,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LoginPage/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="27" selection-start="778" selection-end="778" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1054">
-          <folding />
-        </state>
+        <state line="27" column="27" selection-start="778" selection-end="778" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1054" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LoginPage/Login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="11" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1343">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="28" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="68" column="11" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1343" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Downloads/checklist.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="36" selection-start="257" selection-end="281" vertical-scroll-proportion="0.272" vertical-offset="0" max-vertical-offset="875">
-          <folding />
-        </state>
+        <state line="14" column="36" selection-start="257" selection-end="281" vertical-scroll-proportion="0.272" vertical-offset="0" max-vertical-offset="875" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Downloads/styling.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="1" selection-start="2" selection-end="1425" vertical-scroll-proportion="0.6981132" vertical-offset="1258" max-vertical-offset="3434">
-          <folding />
-        </state>
+        <state line="111" column="1" selection-start="2" selection-end="1425" vertical-scroll-proportion="0.6981132" vertical-offset="1258" max-vertical-offset="3434" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Checklist/checklist.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="38" selection-start="524" selection-end="546" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="646">
+        <state line="22" column="38" selection-start="524" selection-end="546" vertical-scroll-proportion="-15.612904" vertical-offset="0" max-vertical-offset="836">
           <folding />
         </state>
       </provider>
@@ -602,20 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SettingsPage/Settings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="25" selection-start="775" selection-end="775" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="561">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SettingsPage/Settings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="37" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Checklist/styling.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="144" column="25" selection-start="1803" selection-end="1803" vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="4267">
@@ -623,24 +703,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LoginPage/Login.html">
+    <entry file="file://$PROJECT_DIR$/LoginPage/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="25" selection-start="956" selection-end="956" vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="663">
+        <state line="8" column="40" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0" vertical-offset="395" max-vertical-offset="1296" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="876" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckList_Retrieval/ALL PHP Variation/connect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="45.04" vertical-offset="1126" max-vertical-offset="2002" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckList_Retrieval/ALL PHP Variation/some.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckList_Retrieval/AJAX_JS_Variation/checklist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2552" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckList_Retrieval/AJAX_JS_Variation/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="25" selection-start="25" selection-end="25" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1232">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LoginPage/Login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="14" selection-start="1698" selection-end="1698" vertical-scroll-proportion="0.0" vertical-offset="1683" max-vertical-offset="2686">
+        <state line="112" column="14" selection-start="1698" selection-end="1698" vertical-scroll-proportion="0.0" vertical-offset="2442" max-vertical-offset="3476">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LoginPage/Login.js">
+    <entry file="file://$PROJECT_DIR$/SettingsPage/Settings.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="33" selection-start="550" selection-end="550" vertical-scroll-proportion="0.33962265" vertical-offset="0" max-vertical-offset="901">
+        <state line="24" column="25" selection-start="775" selection-end="775" vertical-scroll-proportion="-17.032259" vertical-offset="0" max-vertical-offset="726">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="25" selection-start="25" selection-end="25" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LoginPage/Login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="6" selection-start="277" selection-end="277" vertical-scroll-proportion="-7.096774" vertical-offset="0" max-vertical-offset="858">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SettingsPage/Settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="1" selection-start="1668" selection-end="1668" vertical-scroll-proportion="0.0" vertical-offset="418" max-vertical-offset="1342">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="36" selection-start="2235" selection-end="2235" vertical-scroll-proportion="0.8046615" vertical-offset="573" max-vertical-offset="1474">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
