@@ -27,17 +27,17 @@ $(document).ready(function(){
         var center = document.getElementById("center");
         center.innerHTML = '' +
             '<div id="title">New User Registration</div>' +
-            '<form method="post" action="register">' +
+            '<form action="database">' +
                 '<label for="newUsername">Username:</label><br>' +
                 '<input id="newUsername" type="text" name="username"><br>' +
                 '<label for="newPassword">Password:</label><br>' +
                 '<input id="newPassword" type="password" name="password"><br>' +
                 '<label for="newPassword2">Re-Enter Password:</label><br>' +
-                '<input id="newPassword2" type="password" name="password1"><br>' +
+                '<input id="newPassword2" type="password" name="password"><br>' +
                 '<label for="newEmail">Email:</label><br>' +
                 '<input id="newEmail" type="text" name="email"><br>' +
                 '<input id="submit" type="submit" value="Create">' +
             '</form>';
-    });
+    })
 
 });
