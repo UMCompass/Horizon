@@ -2,10 +2,6 @@
  * Created by John on 4/12/14.
  */
 
-database = {
-    "School_Name": "UMass"
-};
-
 /*function initializeSideBar(database) {
     var sidebar = document.getElementById("sidebar");
     console.log(sidebar);
@@ -33,11 +29,11 @@ $(document).ready(function(){
                 '<label for="newPassword">Password:</label><br>' +
                 '<input id="newPassword" type="password" name="password"><br>' +
                 '<label for="newPassword2">Re-Enter Password:</label><br>' +
-                '<input id="newPassword2" type="password" name="password1"><br>' +
+                '<input id="newPassword2" type="password" name="passwordretyped"><br>' +
                 '<label for="newEmail">Email:</label><br>' +
                 '<input id="newEmail" type="text" name="email"><br>' +
                 '<input id="submit" type="submit" value="Create">' +
             '</form>';
-    });
+    })
 
 });
