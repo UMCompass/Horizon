@@ -1,0 +1,245 @@
+
+#everything{
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	margin: 0;
+}
+
+/*
+
+Formatting the left hand side
+
+*/
+
+#leftside{
+	float:left;
+	background-color: #800000;
+	height: 100%;
+	width: 20%;
+	position: relative;
+	top: 0%;
+	left: 0%;
+}
+
+#sidebar{
+	position: relative;
+	height: 60%;
+	width: 100%;
+	overflow: auto;
+	background-color: #800000;
+	top: 20%;
+}
+
+
+#sidebar::-webkit-scrollbar { 
+    display: none;
+}
+
+
+#sidebarMenu{
+	float:left;
+	width:75%;
+	position: relative;
+	top: 0px;
+	list-style-type: none;
+	padding-left: 0px;
+	padding-top: 2px;
+	padding-bottom: 0px;
+	padding-right: 15%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-family: "Euphemia UCAS";
+	font-size: 18pt;
+	line-height: 120%;
+	text-indent: 40px;
+	color:white;
+	vertical-align: middle;
+	font-weight: bold;
+	cursor: default;
+}
+
+#sidebar li{
+	padding-top: 1px;
+	padding-bottom: 3px;
+
+}
+
+.selected{
+	background-color: #FFCC00;
+	color: black;
+	text-align: right;
+	padding-right: 6px;
+}
+
+.sidebarItem:not(.selected):hover{
+	color: black;
+}
+
+#bar{
+	float:left;
+	position: absolute;
+	background-color: black;
+	width:10px;
+	height:100%;
+	top: 0px;
+	right:0px;
+}
+
+#name{
+	float:right;
+	position:absolute;
+	left: 5%;
+	top: 90%;
+	color: #FFCCCC;
+	font-size: 16pt;
+	font-family: "Euphemia UCAS";
+	font-weight: bold;
+}
+
+#horizon{
+	float:left;
+	position:absolute;
+	left: 15%;
+	top: 93%;
+	color: #FFCCCC;
+	font-size: 12pt;
+	font-family: "Euphemia UCAS";
+	font-weight: bold;
+}
+
+
+/*
+
+Formatting the Center and Checklist
+
+*/
+
+
+#center{
+	float:left;
+	position: relative;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 80%;
+	overflow: hidden;
+}
+
+#titleAndChecklist{
+	position: relative;
+	left: 10%;
+	top:10%;
+	width: 100%;
+	height: 100%;
+}
+
+#title{
+	position: relative;
+	left:0%;
+	font-size: 30pt;
+	vertical-align: bottom;
+	padding-bottom: 10px;
+	font-family: "Euphemia UCAS";
+	font-weight: bold;
+}
+
+#checklist{
+	border-top: solid;
+	position: relative;
+	height: 80%;
+	width: 60%;
+}
+
+#checklist{
+	overflow: auto;
+}
+
+#checklist::-webkit-scrollbar{ 
+    display: none;
+}
+
+#checklist>ul{
+	padding-left: 0;
+	list-style-type: none;
+}
+
+#checklist>ul>li>div{
+	height: auto;
+	width: 100%;
+	display: inline-block;
+	padding-bottom: 20px;
+}
+
+.checkbox{
+	float:left;
+	position: relative;
+	top:0;
+	left:0;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	height: 50px;
+	width: 50px;
+	font-size: 50;
+	text-align: center;
+	cursor: default;
+}
+
+
+.unchecked .checkbox{
+	color: #DADADA;
+}
+
+.checked .checkbox{
+	color: black;
+}
+
+.itemHeadingBox{
+	height:50px;
+}
+
+.nameAndDate{
+	position: relative;
+	float:left;
+	height:50px;
+	font-family: "Euphemia UCAS";
+	padding-left: 5px
+}
+
+
+.nameBox{
+	height: 50%;
+	width: 100%;
+	font-weight: bold;
+	font-size: 18pt;
+}
+
+.dateBox{
+	height: 50%;
+	width: 100%;
+	color:gray;
+	font-size: 14pt;
+}
+
+.instructionsBox ul{
+	padding-top: 20px;
+	height:auto;
+	width: auto;
+	position: relative;
+	font-family: Georgia;
+	font-size: 14pt;
+	list-style-type: none;
+}
+
+.instructionsBox ul li{
+	padding-bottom: 5px;
+}
+
+.findit{
+	background-color: red;
+}
+

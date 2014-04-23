@@ -1,0 +1,152 @@
+
+#everything{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    margin: 0;
+}
+
+/*
+Formatting the left hand side
+*/
+
+#leftside {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 20%;
+    background-color: #800000;
+    top: 0;
+    bottom: 0;
+}
+
+#leftside form{
+    position: relative;
+    top: 0;
+    padding-left: 15%;
+    padding-top: 40%;
+    padding-bottom: 5%;
+    padding-right: 20%;
+    color:white;
+    cursor:default;
+}
+
+#leftside input{
+    position: relative;
+    margin-bottom: 10%;
+}
+
+#leftside label{
+    position: relative;
+    font-family: "Euphemia UCAS";
+    font-size: 18pt;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+#register{
+    position: relative;
+    color: white;
+    font-family: "Euphemia UCAS";
+    font-size: 8pt;
+    padding-left: 15.5%;
+    margin-top: -10%;
+    cursor: default;
+}
+
+#bar{
+    float:left;
+    position: absolute;
+    background-color: black;
+    width:10px;
+    height:100%;
+    top: 0px;
+    right:0px;
+}
+
+#compass {
+    float: right;
+    position: absolute;
+    left: 5%;
+    top: 90%;
+    color: #FFCCCC;
+    font-size: 16pt;
+    font-family: "Euphemia UCAS";
+    font-weight: bold;
+}
+
+#horizon{
+    float:left;
+    position: absolute;
+    left: 15%;
+    top: 93%;
+    color: #FFCCCC;
+    font-size: 12;
+    font-family: "Euphemia UCAS";
+    font-weight: bold;
+}
+
+#center {
+    float: left;
+    position: relative;
+    height: 100%;
+    width: 80%;
+    left: 0;
+    top: 0;
+    font-family: "Euphemia UCAS";
+}
+
+#center #title{
+    position: relative;
+    top: 10%;
+    left: 10%;
+    width: 50%;
+    font-size: 30pt;
+    font-weight: bold;
+    color: #800000;
+    padding-bottom: 1%;
+}
+
+#center #intro{
+    border-top: solid;
+    padding-top: 1%;
+    position: relative;
+    top: 10%;
+    left: 10%;
+    width: 60%;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 14pt;
+}
+
+#center form{
+    border-top: solid;
+    padding-top: 1%;
+    position: relative;
+    top: 10%;
+    left: 10%;
+    width: 50%;
+}
+
+#center input{
+    position: relative;
+    margin-bottom: 4%;
+    left: 8%
+}
+
+#center #submit{
+    left: 0%;
+}
+
+#center label{
+    position: relative;
+    font-family: "Euphemia UCAS";
+    font-size: 18pt;
+    font-weight: bold;
+    line-height: 120%;
+    color: #800000;
+}
+
