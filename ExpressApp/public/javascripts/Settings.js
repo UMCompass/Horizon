@@ -1,6 +1,21 @@
 function displaySettingsItem(settingsItem){
     var center = document.getElementById('center');
     center.innerHTML = "";
+    center.innerHTML = "" +
+        "<div id='navMenu'>" +
+        "<div id='navChecklist'>" +
+        "<div class='navContainer'><a href='/Checklist'>Checklist</a></div>" +
+        "</div>" +
+        "<div id='navSettings'>" +
+        "<div class='navContainer'><a href='/settings'>Settings</a></div>" +
+        "</div>" +
+        "<div id='navForums'>" +
+        "<div class='navContainer'>Forums</div>" +
+        "</div>" +
+        "<div id='navLogout'>" +
+        "<div class='nacContainer'><a href='/logout' id='logout'>Logout</a></div>" +
+        "</div>" +
+        "</div>";
     setTitle(settingsItem.innerHTML);
 
     var form = document.createElement('form');

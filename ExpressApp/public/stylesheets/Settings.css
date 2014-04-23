@@ -120,6 +120,32 @@ Formatting the left hand side
     font-family: "Euphemia UCAS";
 }
 
+#navMenu{
+    position: relative;
+    top: 0;
+    float: left;
+    left: 80%;
+}
+
+#navMenu>div{
+    float:left;
+    width: 80px;
+    height: 100%;
+    vertical-align: bottom;
+}
+
+#navMenu #logout {
+    text-decoration: none;
+}
+
+#navMenu #settings {
+    text-decoration: none;
+}
+
+#navMenu #checklist {
+    text-decoration: none;
+}
+
 #center #title{
     position: relative;
     width: 50%;

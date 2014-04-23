@@ -53,7 +53,7 @@ Formatting the left hand side
 	margin-top: 0px;
 	margin-bottom: 0px;
 	font-family: "Euphemia UCAS";
-	font-size: 18;
+	font-size: 18pt;
 	line-height: 120%;
 	text-indent: 40px;
 	color:white;
@@ -127,10 +127,12 @@ Formatting the Center and Checklist
 	width: 80%;
 	overflow: hidden;
 }
+
 #logout {
 	text-decoration: none;
 	
 }
+
 #navMenu{
 	position: relative;
 	top: 0;
