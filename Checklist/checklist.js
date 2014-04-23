@@ -1,7 +1,7 @@
 database ={
-	"Housing": 	[['Select Housing', '3/28', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing and more and more and more and more and more and more and more and more', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
+	"Housing": 	[['Sign Housing Contract', 'Some relevant due date', 'Sign the housing contract found on <a href="https://www.spire.umass.edu">Spire</a>', 'Log on and then select the Main Menu tab, then the Housing tab', 'The Residential Hall Contract will be found here'],
+				['Complete the Roommate Preference Form', 'Some relevant date', 'Log on to <a href="https://www.spire.umass.edu">Spire</a> ', 'You will find the "Preference Application" in the same tab the above', 'this is also more text'],
+				['Request an appointment', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
 				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
 				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
 	"Registration": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
