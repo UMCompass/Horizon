@@ -99,6 +99,54 @@ exports.settings = function(req,res){
 	}
 };
 
+exports.settingUpdate = function(req,res){
+	var user = req.session.user;
+
+	var newUsr = req.body.newUser;
+	var pass1 = req.body.newPass;
+	var pass2 = req.body.newPass2;
+	var email = req.body.newEmail;
+
+	console.log(newUsr + "::" + pass1 + "::" + pass2 + "::" + email);
+
+	if(!user){
+		res.redirect('/');
+	}
+
+	else{
+		MongoClient.connect('mongodb://localhost:27017',function(err,db){
+			var users = db.collection('users');
+
+			if(newUsr.length > 0){
+				users.update({username: user.username}, { $set: {username: newUsr} },function(err,result){
+						if (err) throw err;
+						console.log(result);
+					});
+				res.redirect('checklist');
+			}
+			else if( (pass1.length > 0) && (pass2.length > 0) ) {
+				users.update({password: user.password}, {$set: {password: pass1} }, function(err,result){
+						if (err) throw err;
+						console.log(result);
+					});
+				res.redirect('checklist');
+			}
+			else if( email.length > 0) {
+				users.update({email: user.email}, { $set: {email: email} }, function(err,result){
+						if (err) throw err;
+						console.log(result);
+					});
+				res.redirect('checklist');
+			}
+			else
+				res.redirect('checklist');
+
+			
+		});
+	}
+};
+
+
 exports.logout = function(req,res){
 	var user = req.session.user;
 	if(!user){
@@ -106,7 +154,7 @@ exports.logout = function(req,res){
 	}
 	else{
 		req.session.destroy(function(){
-			res.redirect('/');
+			res.render('login');
 		});
 	}
 };
