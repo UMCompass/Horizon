@@ -95,7 +95,11 @@ exports.settings = function(req,res){
 		res.redirect('/');
 	}
 	else{
-		res.render('settings');
+		res.render('settings', {
+			title: "UMass Compass",
+			success: req.flash('success'),
+			error: req.flash('error')
+		});
 	}
 };
 
