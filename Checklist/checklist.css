@@ -42,39 +42,53 @@ Formatting the left hand side
 
 #sidebarMenu{
 	float:left;
-	width:75%;
+	width:85%;
 	position: relative;
 	top: 0px;
 	list-style-type: none;
+	overflow: hidden;
+
 	padding-left: 0px;
 	padding-top: 2px;
 	padding-bottom: 0px;
 	padding-right: 15%;
 	margin-top: 0px;
 	margin-bottom: 0px;
+
+
 	font-family: "Euphemia UCAS";
 	font-size: 18;
-	line-height: 120%;
-	text-indent: 40px;
-	color:white;
 	vertical-align: middle;
 	font-weight: bold;
 	cursor: default;
 }
 
-#sidebar li{
+.sidebarItem{
 	padding-top: 1px;
 	padding-bottom: 3px;
 	background-color: rgba(0,0,0,0);
 }
 
+.menuItemContents{
+	color: white;
+	padding-left: 20px;
+	padding-right: 10px;
+}
+
 .selected{
 	color: black;
+}
+
+.selected .menuItemContents{
 	text-align: right;
-	padding-right: 6px;
+	color: black;
 }
 
 .sidebarItem:not(.selected):hover{
+	color: black;
+}
+
+.sidebarItem:hover .menuItemContents{
 	color: black;
 }
 

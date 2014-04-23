@@ -78,8 +78,13 @@ function initializeSideBar(database){
 
 	for (entry in database){
 		var menuItem = document.createElement("li");
-		menuItem.innerHTML = entry;
 		menuItem.classList.add('sidebarItem');
+
+		var menuItemContents = document.createElement("div");
+		menuItemContents.classList.add('menuItemContents');
+		menuItemContents.innerHTML = entry;
+		menuItem.appendChild(menuItemContents);
+
 		sidebarMenu.appendChild(menuItem);
 	}
 
@@ -188,14 +193,12 @@ $(document).ready(function(){
 
 		this.classList.add("selected");
 		this.style.background = colorDatabase['sidebarHighlight'];
-		displayChecklistItem(this.innerHTML);
+
+		displayChecklistItem(this.getElementsByClassName('menuItemContents')[0].innerHTML);
 
 	});
 
-	// Hovering over topics in the sidebar
-	$("#sidebarMenu>li").on("mouseover", function(){
-		this.color = "black";
-	});
+
 
 	// Clicking on checkboxes
 	$(document).on('click', '.checkbox', function(){
@@ -229,5 +232,6 @@ Highlight checkbox when you hover over
 
 Scroll bar to indicate the items are scrollable
 
+Animate the overflow of of the sidebar topics
 
 */
