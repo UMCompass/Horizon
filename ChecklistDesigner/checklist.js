@@ -1,4 +1,4 @@
-database ={
+/*database ={
 	"Housing": 	[['Sign Housing Contract', 'Some relevant due date', 'Sign the housing contract found on <a href="https://www.spire.umass.edu">Spire</a>', 'Log on and then select the Main Menu tab, then the Housing tab', 'The Residential Hall Contract will be found here'],
 				['Complete the Roommate Preference Form', 'Some relevant date', 'Log on to <a href="https://www.spire.umass.edu">Spire</a> ', 'You will find the "Preference Application" in the same tab the above', 'this is also more text'],
 				['Request an appointment', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
@@ -53,7 +53,104 @@ database ={
     "This scrolling feature is pretty impressive": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
         ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']]
 
+			}*/
+
+
+
+database = [
+	{
+		'idNum' : '001',
+		'name' : 'topic1',
+		'elements' : [
+			{ 'name': 'element1',
+			'due' : 'due date',
+			'checked' : false,
+			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
+			},
+			{ 'name': 'element2',
+			'due' : 'due date',
+			'checked' : false,
+			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
+			},
+			{ 'name': 'element3',
+			'due' : 'due date',
+			'checked' : false,
+			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
 			}
+		]
+	},
+
+	{
+		'idNum' : '002',
+		'name' : 'topic2',
+		'elements' : [
+			{ 'name': 'element1',
+			'due' : 'due date',
+			'checked' : false,
+			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
+			},
+			{ 'name': 'element2',
+			'due' : 'due date',
+			'checked' : false,
+			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
+			},
+			{ 'name': 'element3',
+			'due' : 'due date',
+			'checked' : false,
+			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
+			}
+		]
+	},
+
+	{
+		'idNum' : '003',
+		'name' : 'topic3',
+		'elements' : [
+			{ 'name': 'element1',
+			'due' : 'due date',
+			'checked' : false,
+			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
+			},
+			{ 'name': 'element2',
+			'due' : 'due date',
+			'checked' : false,
+			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
+			},
+			{ 'name': 'element3',
+			'due' : 'due date',
+			'checked' : false,
+			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
+			}
+		]
+	},
+
+	{
+		'idNum' : '004',
+		'name' : 'topic4',
+		'elements' : [
+			{ 'name': 'element1',
+			'due' : 'due date',
+			'checked' : false,
+			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
+			},
+			{ 'name': 'element2',
+			'due' : 'due date',
+			'checked' : false,
+			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
+			},
+			{ 'name': 'element3',
+			'due' : 'due date',
+			'checked' : false,
+			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
+			}
+		]
+	}
+]
+
+
+
+
+
 
 colorDatabase = {
 	'sidebarMain': "rgba(128, 0, 0, 1)",
@@ -61,7 +158,6 @@ colorDatabase = {
 	'sidebarNoHilight' : 'rgba(0,0,0,0)',
 	'sidebarTextNoHighlight': "rgba(0,0,0,1)",
 	'sidebarTextHighlight': "rgba(255,255,255,1)",
-
 
 	'centerMain' : "rgba(255,255,255,1)",
 	'centerText' : "rgba(255,255,255,1)",
@@ -73,22 +169,54 @@ colorDatabase = {
 function initializeSideBar(database){
 	
 	sidebar = document.getElementById("sidebar");
+	sidebar.innerHTML = '';
 	sidebarMenu = document.createElement("ul");
 	sidebarMenu.setAttribute("id", "sidebarMenu");
-
-	for (entry in database){
+	for (var i = 0; i<database.length; i++){
 		var menuItem = document.createElement("li");
 		menuItem.classList.add('sidebarItem');
+		menuItem.id = database[i]['idNum'];
 
 		var menuItemContents = document.createElement("div");
 		menuItemContents.classList.add('menuItemContents');
-		menuItemContents.innerHTML = entry;
+		menuItemContents.innerHTML = database[i]['name'];
 		menuItem.appendChild(menuItemContents);
-
 		sidebarMenu.appendChild(menuItem);
 	}
 
 	sidebar.appendChild(sidebarMenu);
+
+	$("#sidebarMenu>li").click(function(){
+		var that = $(this);
+		var sel = $("#sidebarMenu>li.selected");
+		if (sel.length!=0){
+			sel.css('background-color', colorDatabase['sidebarNoHilight']);
+			sel.removeClass("selected");
+		}
+
+		while (that.firstChild) {
+    		that.removeChild(that.firstChild);
+    	}
+
+		this.classList.add("selected");
+		this.style.background = colorDatabase['sidebarHighlight'];
+
+		displayChecklistItem(that);
+
+	});
+
+		// Right-click on sidebar elements
+	$("#sidebarMenu>li").on("contextmenu",function(e){
+		e.preventDefault();
+		var topic = this.getElementsByClassName('menuItemContents')[0].innerHTML
+		var newText = prompt('Enter the new topic name', topic);
+		//TODO: the condition should make sure there are no other topics with the same name
+		if (newText!=null){
+			database[newText] = database[topic];
+			delete database[topic];
+			initializeSideBar(database);
+	   }
+	});
 }
 
 function setTitle(title){
@@ -108,12 +236,11 @@ function displayChecklistItem(checklistItem){
 	while(checklistDiv.firstChild){
 		checklistDiv.removeChild(checklistDiv.firstChild);
 	}
-
 	var checklist = document.createElement('ul');
-	var current = database[checklistItem];
-	for (var i=0; i<current.length; i++){
-		singleItem = current[i];
-
+	var topicIndex = checklistItem.index();
+	var current = database[topicIndex];
+	for (var i=0; i<current['elements'].length; i++){
+		singleElement = current['elements'][i];
 		//INDIVIDUAL ITEM
 		listItem = document.createElement('li');
 		listItem.classList.add('item');
@@ -129,6 +256,8 @@ function displayChecklistItem(checklistItem){
 		checkBox = document.createElement('div');
 		checkBox.classList.add('checkbox');
 		checkBox.innerHTML = '\u2713';
+		singleElement['checked'] ? checkBox.classList.add('checked') : checkBox.classList.add('unchecked');
+
 		box.appendChild(checkBox);
 
 		//NAME AND DATE BOX
@@ -138,13 +267,13 @@ function displayChecklistItem(checklistItem){
 		//NAME BOX
 		nameBox = document.createElement('div');
 		nameBox.classList.add('nameBox');
-		nameBox.innerHTML = singleItem[0];
+		nameBox.innerHTML = singleElement['name'];
 		nameAndDateBox.appendChild(nameBox);
 
 		//DATE BOX
 		dateBox = document.createElement('div');
 		dateBox.classList.add('dateBox');
-		dateBox.innerHTML = singleItem[1];
+		dateBox.innerHTML = singleElement['due'];
 		nameAndDateBox.appendChild(dateBox);
 
 		//Finalizing the heading and adding it to the item
@@ -157,9 +286,9 @@ function displayChecklistItem(checklistItem){
 		instructionsBox.classList.add('instructionsBox');
 
 		instructionsList = document.createElement('ul');
-		for (var j=2; j<singleItem.length; j++){
+		for (var j=0; j<singleElement['text'].length; j++){
 			nextInstruction = document.createElement('li');
-			nextInstruction.innerHTML = singleItem[j];
+			nextInstruction.innerHTML = singleElement['text'][j];
 			instructionsList.appendChild(nextInstruction);
 		}
 		instructionsBox.appendChild(instructionsList);
@@ -169,43 +298,15 @@ function displayChecklistItem(checklistItem){
 		checklist.appendChild(listItem);
 	}
 	checklistDiv.appendChild(checklist);
-	setTitle(checklistItem);
+	setTitle(current['name']);
 	
 }
 
 
 $(document).ready(function(){
 	initializeSideBar(database);
-
 	setColors(colorDatabase);
 
-	$("#sidebarMenu>li").click(function(){
-		var that = $(this);
-		var sel = $("#sidebarMenu>li.selected");
-		if (sel.length!=0){
-			sel.css('background-color', colorDatabase['sidebarNoHilight']);
-			sel.removeClass("selected");
-		}
-
-		while (that.firstChild) {
-    		that.removeChild(that.firstChild);
-    	}
-
-		this.classList.add("selected");
-		this.style.background = colorDatabase['sidebarHighlight'];
-
-		displayChecklistItem(this.getElementsByClassName('menuItemContents')[0].innerHTML);
-
-	});
-
-
-	// Right-click on sidebar elements
-	$("#sidebarMenu>li").on("contextmenu",function(e){
-	   e.preventDefault();
-	   var newText = prompt('Enter the new topic name', this.innerHTML);
-	   this.innerHTML = newText;
-	   
-	});
 
 /*	// Right-click on the sidebar
 	$("#leftside").on("contextmenu",function(e){

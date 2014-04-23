@@ -73,7 +73,6 @@ Formatting the left hand side
 	color: white;
 	padding-left: 20px;
 	padding-right: 10px;
-	font-family: "Euphemia UCAS";
 }
 
 .selected{
@@ -165,6 +164,7 @@ Formatting the Center and Checklist
 	height:auto;
 	position: absolute;
 	bottom: 0;
+	font-family: "Euphemia UCAS";
 }
 
 #titleAndChecklist{
