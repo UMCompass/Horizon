@@ -40,6 +40,7 @@ app.post('/register',routes.register);
 app.post('/authorize',routes.authorize);
 app.get('/settings',routes.settings);
 app.get('/checklist',routes.checklist);
+app.post('/logout',routes.logout);
 
 
 http.createServer(app).listen(app.get('port'), function(){

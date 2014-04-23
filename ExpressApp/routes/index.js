@@ -98,3 +98,15 @@ exports.settings = function(req,res){
 		res.render('settings');
 	}
 };
+
+exports.logout = function(req,res){
+	var user = req.session.user;
+	if(!user){
+		res.redirect('/');
+	}
+	else{
+		req.session.destroy(function(){
+			res.redirect('/');
+		});
+	}
+};
