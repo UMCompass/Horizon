@@ -36,10 +36,10 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.login);
-app.post('/register',routes.register);
-app.post('/authorize',routes.authorize);
 app.get('/settings',routes.settings);
 app.get('/checklist',routes.checklist);
+app.post('/register',routes.register);
+app.post('/authorize',routes.authorize);
 app.post('/logout',routes.logout);
 
 

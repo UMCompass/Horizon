@@ -50,7 +50,7 @@ exports.authorize = function(req,res){
 exports.register = function(req,res){
 	var user = req.body.username;
 	var pass = req.body.password;
-	var repass = req.body.password1;
+	var repass = req.body.passwordretyped;
 	var email = req.body.email;
 	if(!(user && pass && repass && email) || pass!=repass){
 		res.redirect('/');
