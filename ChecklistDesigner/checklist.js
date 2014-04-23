@@ -1,61 +1,3 @@
-/*database ={
-	"Housing": 	[['Sign Housing Contract', 'Some relevant due date', 'Sign the housing contract found on <a href="https://www.spire.umass.edu">Spire</a>', 'Log on and then select the Main Menu tab, then the Housing tab', 'The Residential Hall Contract will be found here'],
-				['Complete the Roommate Preference Form', 'Some relevant date', 'Log on to <a href="https://www.spire.umass.edu">Spire</a> ', 'You will find the "Preference Application" in the same tab the above', 'this is also more text'],
-				['Request an appointment', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-	"Registration": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-	"Financial Aid": [['Apply to Fafsa', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-	"Future Milestone 1": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-	"Future Milestone 2": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-	"Future Milestone 3": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-	"Future Milestone 4": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 5": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 6": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 7": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 8": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 9": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 10": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 11": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 32": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 22": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 1337": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone l33t": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 13e7": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone leet": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "So many Milestones": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Here are some more mile stones": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "more milestones": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestones?": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "This scrolling feature is pretty impressive": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']]
-
-			}*/
-
-
 
 database = [
 	{
@@ -73,6 +15,16 @@ database = [
 			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
 			},
 			{ 'name': 'element3',
+			'due' : 'due date',
+			'checked' : false,
+			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
+			},
+			{ 'name': 'element4',
+			'due' : 'due date',
+			'checked' : false,
+			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
+			},
+			{ 'name': 'element5',
 			'due' : 'due date',
 			'checked' : false,
 			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
@@ -148,28 +100,92 @@ database = [
 ]
 
 
-
-
-
-
 colorDatabase = {
-	'sidebarMain': "rgba(128, 0, 0, 1)",
-	'sidebarHighlight' : "rgba(255,204,0,1)",
-	'sidebarNoHilight' : 'rgba(0,0,0,0)',
-	'sidebarTextNoHighlight': "rgba(0,0,0,1)",
-	'sidebarTextHighlight': "rgba(255,255,255,1)",
+	'sidebarMain': '#800000',
+	'sidebarHighlight' : '#FFCC00',
+	'sidebarTextNoHighlight': "#000000",
+	'sidebarTextHighlight': "#FFFFFF",
 
-	'centerMain' : "rgba(255,255,255,1)",
-	'centerText' : "rgba(255,255,255,1)",
-	'centerDate' : "rgba(80,80,80, 1)"
-
+	'centerMain' : "#FFFFFF",
+	'centerText' : "#FFFFFF",
+	'centerDate' : "#505050"
 };
 
+staticColors = {
+	'sidebarNoHilight' : 'rgba(0,0,0,0)'
+}
 
-function initializeSideBar(database){
-	
+function initializeColorButton(){
+	leftside = document.getElementById("leftside");
+	editColorsButton = document.createElement("div");
+	editColorsButton.id = 'editColorsButton';
+	editColorsButton.innerHTML = 'Color Pallette';
+
+	$(document).on('click', '#editColorsButton', function(){
+		displayColorMenu(colorDatabase);
+	});
+
+	leftside.appendChild(editColorsButton);
+}
+
+
+function displayColorMenu(colors){
+	var coverDiv = document.createElement("div");
+	coverDiv.id = 'coverDiv';
+	var everything = document.getElementById("everything");
+	everything.appendChild(coverDiv);
+
+	var colorMenu = document.createElement('div');
+	colorMenu.id = 'colorMenu';
+	var colorList = document.createElement('ul');
+	colorList.id = 'colorList';
+
+	for(entry in colorDatabase){
+		var colorItem = document.createElement('li');
+		var nextColor = document.createElement('div');
+		nextColor.classList.add('colorChooserDiv');
+		var colorName = document.createElement('div');
+		colorName.innerHTML = entry
+		colorName.classList.add('colorName');
+		colorItem.appendChild(colorName);
+
+
+		var chooser = document.createElement('input');
+		chooser.classList.add('color');
+		chooser.value = colors[nextColor.innerHTML];
+
+		nextColor.appendChild(chooser);
+		colorItem.appendChild(nextColor)
+		colorList.appendChild(colorItem);
+	}
+	colorMenu.appendChild(colorList);
+	coverDiv.appendChild(colorMenu);
+	jscolor.init();
+
+	$(document).on('click', '#coverDiv', function(){
+
+		var colorList = document.getElementById('colorList');
+		var items = colorList.getElementsByClassName('colorChooserDiv');
+		
+		for (var i=0; i<items.length; i++){
+			console.log(items[i].innerHTML);
+		}
+
+		cover = document.getElementById('coverDiv');
+		document.getElementById('everything').removeChild(cover);
+	})
+
+	$(document).on('click', '#colorMenu', function(){
+		return false;
+	})
+
+}
+
+
+function initializeSideBar(database){	
 	sidebar = document.getElementById("sidebar");
 	sidebar.innerHTML = '';
+
 	sidebarMenu = document.createElement("ul");
 	sidebarMenu.setAttribute("id", "sidebarMenu");
 	for (var i = 0; i<database.length; i++){
@@ -190,7 +206,7 @@ function initializeSideBar(database){
 		var that = $(this);
 		var sel = $("#sidebarMenu>li.selected");
 		if (sel.length!=0){
-			sel.css('background-color', colorDatabase['sidebarNoHilight']);
+			sel.css('background-color', staticColors['sidebarNoHilight']);
 			sel.removeClass("selected");
 		}
 
@@ -209,14 +225,15 @@ function initializeSideBar(database){
 	$("#sidebarMenu>li").on("contextmenu",function(e){
 		e.preventDefault();
 		var topic = this.getElementsByClassName('menuItemContents')[0].innerHTML
-		var newText = prompt('Enter the new topic name', topic);
+		var newName = prompt('Enter the new topic name', topic);
 		//TODO: the condition should make sure there are no other topics with the same name
-		if (newText!=null){
-			database[newText] = database[topic];
-			delete database[topic];
+		if (newName!=null && newName!=''){
+			topicIndex = $(this).index();
+			database[topicIndex]['name'] = newName;
 			initializeSideBar(database);
 	   }
 	});
+
 }
 
 function setTitle(title){
@@ -304,16 +321,9 @@ function displayChecklistItem(checklistItem){
 
 
 $(document).ready(function(){
+	initializeColorButton();
 	initializeSideBar(database);
 	setColors(colorDatabase);
-
-
-/*	// Right-click on the sidebar
-	$("#leftside").on("contextmenu",function(e){
-	   e.preventDefault();
-	   var newText = prompt('Enter the new topic name', this.innerHTML);
-	   this.innerHTML = newText;
-	});*/
 
 
 	// Clicking on checkboxes
@@ -328,8 +338,6 @@ $(document).ready(function(){
 			item.addClass('unchecked');
 		}
 	});
-
-
 });
 
 /*
@@ -340,7 +348,9 @@ Set the mouse icon for its different hovers
 
 Turn mouse into a checkmark when hovering over the checkbox?
 
-Collapse items that are "completed" and after their "data", say "complete"
+Collapse items that are "completed" 
+
+Items that are completed should say if after their due date
 
 Prevent highlighting on the checkboxk
 

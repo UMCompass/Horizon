@@ -26,7 +26,7 @@ Formatting the left hand side
 }
 
 #sidebar{
-	position: absolute;
+	position: relative;
 	height: 60%;
 	width: 100%;
 	overflow: auto;
@@ -42,53 +42,39 @@ Formatting the left hand side
 
 #sidebarMenu{
 	float:left;
-	width:85%;
+	width:75%;
 	position: relative;
 	top: 0px;
 	list-style-type: none;
-	overflow: hidden;
-
 	padding-left: 0px;
 	padding-top: 2px;
 	padding-bottom: 0px;
 	padding-right: 15%;
 	margin-top: 0px;
 	margin-bottom: 0px;
-
-
 	font-family: "Euphemia UCAS";
 	font-size: 18;
+	line-height: 120%;
+	text-indent: 40px;
+	color:white;
 	vertical-align: middle;
 	font-weight: bold;
 	cursor: default;
 }
 
-.sidebarItem{
+#sidebar li{
 	padding-top: 1px;
 	padding-bottom: 3px;
 	background-color: rgba(0,0,0,0);
 }
 
-.menuItemContents{
-	color: white;
-	padding-left: 20px;
-	padding-right: 10px;
-}
-
 .selected{
 	color: black;
-}
-
-.selected .menuItemContents{
 	text-align: right;
-	color: black;
+	padding-right: 6px;
 }
 
 .sidebarItem:not(.selected):hover{
-	color: black;
-}
-
-.sidebarItem:hover .menuItemContents{
 	color: black;
 }
 
@@ -102,31 +88,26 @@ Formatting the left hand side
 	right:0px;
 }
 
-#logobox{
-	position: absolute;
-	left: 0;
-	bottom: 10px;
-	height: auto;
-	width: 100%;
-}
-
 #name{
-	position:relative;
+	float:right;
+	position:absolute;
+	left: 5%;
+	top: 90%%;
 	color: #FFCCCC;
 	font-size: 16;
 	font-family: "Euphemia UCAS";
 	font-weight: bold;
-	padding-left: 10px;
 }
 
 #horizon{
 	float:left;
-	position:relative;
+	position:absolute;
+	left: 15%;
+	top: 93%%;
 	color: #FFCCCC;
 	font-size: 12;
 	font-family: "Euphemia UCAS";
 	font-weight: bold;
-	padding-left: 25px;
 }
 
 
@@ -169,7 +150,6 @@ Formatting the Center and Checklist
 	height:auto;
 	position: absolute;
 	bottom: 0;
-	font-family: "Euphemia UCAS";
 }
 
 #titleAndChecklist{
@@ -195,6 +175,9 @@ Formatting the Center and Checklist
 	position: relative;
 	height: 80%;
 	width: 60%;
+}
+
+#checklist{
 	overflow: auto;
 }
 
@@ -277,77 +260,6 @@ Formatting the Center and Checklist
 .instructionsBox ul li{
 	padding-bottom: 5px;
 }
-
-
-/*
-
-Formatting for the color selector
-
-*/
-
-
-#editColorsButton{
-	position: absolute;
-	left: 20px;
-	top: 30px;
-	width: auto;
-	height: auto;
-	cursor: default;
-	border-style: solid;
-	border-color: black;
-	background-color: white;
-	font-family: "Euphemia UCAS";
-	padding-left: 10px;
-	padding-right: 10px;
-}
-
-#coverDiv{
-	position: fixed;
-	width: 100%;
-	height: 100%;
-}
-
-#colorMenu{
-	position: relative;
-	border-style: solid;
-	width: 400px;
-	height: auto;
-	left: 40%;
-	top: 30%;
-	background-color: white;
-}
-
-#colorList{
-	list-style-type: none;
-	padding-left: 0;
-	width: 100%;
-}
-
-#colorList li{
-	position: relative;
-	width: 300px;
-}
-
-.colorChooserDiv{
-
-}
-
-.colorName{
-	position: relative;
-	width:auto;
-	float:left;
-	height: 20px;
-}
-
-
-
-
-
-
-
-
-
-
 
 
 
