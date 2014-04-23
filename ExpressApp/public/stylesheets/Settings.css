@@ -122,9 +122,9 @@ Formatting the left hand side
 
 #navMenu{
     position: relative;
-    top: 0;
+    top: 2%;
     float: left;
-    left: 80%;
+    left: 79%;
 }
 
 #navMenu>div{
@@ -140,17 +140,26 @@ Formatting the left hand side
 
 #navMenu #settings {
     text-decoration: none;
+    background-color: #FFCC00;
+    border-style: solid;
+    border-color: #FFCC00;
+    padding-top: 14%;
 }
 
 #navMenu #checklist {
     text-decoration: none;
 }
 
+:link {color: #000000}
+:visited {color: #000000}
+:hover {color: #000000}
+:active {color: #000000}
+
 #center #title{
     position: relative;
     width: 50%;
     top: 10%;
-    left: 10%;
+    left: -11%;
     padding-bottom: 1%;
     font-size: 30pt;
     font-weight: bold;

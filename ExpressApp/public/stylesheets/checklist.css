@@ -130,7 +130,7 @@ Formatting the Center and Checklist
 
 #logout {
 	text-decoration: none;
-	
+
 }
 
 #navMenu{
@@ -157,6 +157,23 @@ Formatting the Center and Checklist
 	right: -90px;
 	top: -20px;
 }
+
+#navMenu #checklist {
+    text-decoration: none;
+    background-color: #FFCC00;
+    border-style: solid;
+    border-color: #FFCC00;
+    padding-top: 21%;
+}
+
+#navMenu #settings {
+    text-decoration: none;
+}
+
+:link {color: #000000}
+:visited {color: #000000}
+:hover {color: #000000}
+:active {color: #000000}
 
 .navContainer{
 	width: 80px;
