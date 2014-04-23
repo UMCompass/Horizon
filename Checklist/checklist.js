@@ -55,17 +55,31 @@ database ={
 
 			}
 
+colorDatabase = {
+	'sidebarMain': "rgba(128, 0, 0, 1)",
+	'sidebarHighlight' : "rgba(255,204,0,1)",
+	'sidebarNoHilight' : 'rgba(0,0,0,0)',
+	'sidebarTextNoHighlight': "rgba(0,0,0,1)",
+	'sidebarTextHighlight': "rgba(255,255,255,1)",
+
+
+	'centerMain' : "rgba(255,255,255,1)",
+	'centerText' : "rgba(255,255,255,1)",
+	'centerDate' : "rgba(80,80,80, 1)"
+
+};
+
 
 function initializeSideBar(database){
 	
-	sidebar = document.getElementById("sidebar")
+	sidebar = document.getElementById("sidebar");
 	sidebarMenu = document.createElement("ul");
 	sidebarMenu.setAttribute("id", "sidebarMenu");
 
 	for (entry in database){
 		var menuItem = document.createElement("li");
 		menuItem.innerHTML = entry;
-		menuItem.classList.add('sidebarItem')
+		menuItem.classList.add('sidebarItem');
 		sidebarMenu.appendChild(menuItem);
 	}
 
@@ -77,6 +91,11 @@ function setTitle(title){
 	titleBox.innerHTML = title;
 }
 
+
+function setColors(colors){
+	document.getElementById('leftside').style.background = colorDatabase['sidebarMain'];
+	document.getElementById('center').style.background = colorDatabase['centerMain'];
+}
 
 
 function displayChecklistItem(checklistItem){
@@ -153,26 +172,30 @@ function displayChecklistItem(checklistItem){
 $(document).ready(function(){
 	initializeSideBar(database);
 
+	setColors(colorDatabase);
+
 	$("#sidebarMenu>li").click(function(){
 		var that = $(this);
 		var sel = $("#sidebarMenu>li.selected");
 		if (sel.length!=0){
-			sel.removeClass("selected")
+			sel.css('background-color', colorDatabase['sidebarNoHilight']);
+			sel.removeClass("selected");
 		}
+
 		while (that.firstChild) {
     		that.removeChild(that.firstChild);
     	}
 
 		this.classList.add("selected");
+		this.style.background = colorDatabase['sidebarHighlight'];
 		displayChecklistItem(this.innerHTML);
 
 	});
 
+	// Hovering over topics in the sidebar
 	$("#sidebarMenu>li").on("mouseover", function(){
 		this.color = "black";
 	});
-
-
 
 	// Clicking on checkboxes
 	$(document).on('click', '.checkbox', function(){
@@ -185,8 +208,8 @@ $(document).ready(function(){
 			item.removeClass('checked');
 			item.addClass('unchecked');
 		}
-
 	});
+
 
 });
 
@@ -200,8 +223,11 @@ Turn mouse into a checkmark when hovering over the checkbox?
 
 Collapse items that are "completed" and after their "data", say "complete"
 
-Prevent highlighting on the 
+Prevent highlighting on the checkboxk
+
+Highlight checkbox when you hover over
 
 Scroll bar to indicate the items are scrollable
+
 
 */
