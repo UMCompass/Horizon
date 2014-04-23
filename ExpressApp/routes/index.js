@@ -67,7 +67,7 @@ exports.register = function(req,res){
 						console.log(result);
 					});
 					req.session.user = newUser;
-					res.render('checklist');
+					res.redirect('checklist');
 				}
 
 				else{
