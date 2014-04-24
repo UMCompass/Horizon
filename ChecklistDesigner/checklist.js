@@ -2,14 +2,14 @@
 database = [
 	{
 		'idNum' : '001',
-		'name' : 'topic1',
+		'name' : 'Housing',
 		'elements' : [
-			{ 'name': 'element1',
-			'due' : 'due date',
+			{ 'name': 'Select Housing',
+			'due' : '3/28',
 			'checked' : false,
 			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
 			},
-			{ 'name': 'element2',
+			{ 'name': 'Sign Housing Contract',
 			'due' : 'due date',
 			'checked' : false,
 			'text' : ['This is text.', 'This is also text.', 'Most importantly, this is text.']
@@ -34,7 +34,7 @@ database = [
 
 	{
 		'idNum' : '002',
-		'name' : 'topic2',
+		'name' : 'Bursars',
 		'elements' : [
 			{ 'name': 'element1',
 			'due' : 'due date',
@@ -56,7 +56,7 @@ database = [
 
 	{
 		'idNum' : '003',
-		'name' : 'topic3',
+		'name' : 'Financial Aid',
 		'elements' : [
 			{ 'name': 'element1',
 			'due' : 'due date',
