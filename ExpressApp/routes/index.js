@@ -9,7 +9,14 @@ exports.index = function(req, res){
 
 exports.login = function(req,res){
 	var user = req.session.user;
-	if(user){
+	if(user && user.admin != undefined) {
+		if(user.admin === true) {
+			res.redirect('designer');
+		}
+		else
+			res.redirect('checklist');
+	} 
+	else if(user){
 		res.redirect('checklist');
 	}
 	else{
@@ -40,7 +47,13 @@ exports.authorize = function(req,res){
             			if (err) throw err;
             			console.log(result);
           			});
-          			res.redirect('/checklist');
+
+
+          			if(item && item.admin === true) {
+						res.redirect('designer');
+					} 
+					else
+          				res.redirect('/checklist');
         		}
       		});
     	});
@@ -80,12 +93,32 @@ exports.register = function(req,res){
 
 exports.checklist = function(req,res){
 	var user = req.session.user;
-	if(!user){
+
+	if(user && user.admin != undefined) {
+		if(user.admin === true) {
+			res.redirect('designer');
+		}
+		else
+			res.render('checklist');
+	} 
+	else if(user){
+		res.render('checklist');
+	}
+	else{
 		res.redirect('/');
 	}
-	
-	else{
-		res.render('checklist');
+};
+
+exports.designerChecklist = function(req,res){
+	var user = req.session.user;
+
+	if(!user || user.admin != true) {
+		res.redirect('/');
+	}
+	else {
+		res.render('designer', {
+			title: "Compass - Designer"
+		});
 	}
 };
 
@@ -111,59 +144,76 @@ exports.settingUpdate = function(req,res){
 	var pass2 = req.body.newPass2;
 	var email = req.body.newEmail;
 
-	console.log(newUsr + "::" + pass1 + "::" + pass2 + "::" + email);
-
 	if(!user){
 		res.redirect('/');
 	}
 
 	else{
 		MongoClient.connect('mongodb://localhost:27017',function(err,db){
-			var users = db.collection('users');
+			var users = db.collection('users');	
 
 			if( newUsr != undefined ){
-				if(newUsr.length > 0) {
+
+				console.log(newUsr.length);
+
+				if(newUsr.length > 5) {
 					users.update({username: user.username}, { $set: {username: newUsr} },function(err,result){
 						if (err) throw err;
-						console.log(result);
+						//console.log(result);
 
 					});
 					req.flash('success', 'Username has been changed!');
 					res.redirect('settings');
 				}
 				else {
-					req.flash('error', "You must enter a username!");
+					req.flash('error', "Your username must be longer than 5 characters!");
 					res.redirect('settings');
 				}
 				
 			}
 			else if( pass1 != undefined && pass2 != undefined) {
 
-				if( (pass1.length > 0) && (pass2.length > 0) ) {
-					users.update({password: user.password}, {$set: {password: pass1} }, function(err,result){
+				console.log(pass1.length);
+				console.log(pass2.length);
+
+				if( ( pass1.length > 5) && (pass2.length > 5)) {
+
+					if(pass1 === pass2) {
+
+						users.update({password: user.password}, {$set: {password: pass1} }, function(err,result){
 						if (err) throw err;
-						console.log(result);
-					});
-					req.flash('success', "Password changed!");
-					res.redirect('settings');
+						});
+						req.flash('success', "Password changed!");
+						res.redirect('settings');
+					}
+
+					else {
+						req.flash('error', "Invalid! The passwords either don't match or their length is less than 5. Fix this.");
+						res.redirect('settings');
+					}
+					
 				}
+
 				else {
-					req.flash('error', "Enter a password!");
+					req.flash('error', "Invalid! The passwords either don't match or their length is less than 5. Fix this.");
 					res.redirect('settings');
 				}
 				
+				
 			}
-			else if( email != undefined && email.length > 0) {
+			else if( email != undefined && email.length > 1) {
+
+				console.log(email.length);
+
 				users.update({email: user.email}, { $set: {email: email} }, function(err,result){
 						if (err) throw err;
-						console.log(result);
 					});
 				req.flash('success', "Email changed!")
-				res.redirect('checklist');
+				res.redirect('settings');
 			}
 			else
-				req.flash('error', "")
-				res.redirect('checklist');
+				req.flash('error', "Error.")
+				res.redirect('settings');
 
 			
 		});
