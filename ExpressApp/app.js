@@ -39,6 +39,7 @@ app.get('/', routes.login);
 app.get('/settings',routes.settings);
 app.post('/settingUpdate', routes.settingUpdate);
 app.get('/checklist',routes.checklist);
+app.get('/designer', routes.designerChecklist);
 app.post('/register',routes.register);
 app.post('/authorize',routes.authorize);
 app.get('/logout',routes.logout);
