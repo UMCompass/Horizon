@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d1218ccf-37cc-42c4-b652-6b15de0bdad5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExpressApp/public/stylesheets/Settings.css" afterPath="$PROJECT_DIR$/ExpressApp/public/stylesheets/Settings.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExpressApp/public/javascripts/Settings.js" afterPath="$PROJECT_DIR$/ExpressApp/public/javascripts/Settings.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExpressApp/public/stylesheets/checklist.css" afterPath="$PROJECT_DIR$/ExpressApp/public/stylesheets/checklist.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExpressApp/views/checklist.ejs" afterPath="$PROJECT_DIR$/ExpressApp/views/checklist.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExpressApp/views/settings.ejs" afterPath="$PROJECT_DIR$/ExpressApp/views/settings.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Horizon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,10 +36,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.ejs" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="settings.ejs" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ExpressApp/views/settings.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="80" selection-start="913" selection-end="913" vertical-scroll-proportion="-16.32258" vertical-offset="66" max-vertical-offset="1034">
+            <state line="30" column="22" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.7586207" vertical-offset="0" max-vertical-offset="1188">
               <folding />
             </state>
           </provider>
@@ -49,7 +48,7 @@
       <file leaf-file-name="Settings.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ExpressApp/public/javascripts/Settings.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="67" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1672">
+            <state line="54" column="1" selection-start="2212" selection-end="2212" vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="1672">
               <folding />
             </state>
           </provider>
@@ -76,7 +75,16 @@
       <file leaf-file-name="checklist.ejs" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ExpressApp/views/checklist.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="78" selection-start="767" selection-end="767" vertical-scroll-proportion="-14.193548" vertical-offset="132" max-vertical-offset="1144">
+            <state line="26" column="78" selection-start="767" selection-end="767" vertical-scroll-proportion="-18.451612" vertical-offset="0" max-vertical-offset="1144">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checklist.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ExpressApp/public/javascripts/checklist.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="5236">
               <folding />
             </state>
           </provider>
@@ -85,34 +93,37 @@
       <file leaf-file-name="checklist.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChecklistDesigner/checklist.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6292">
-              <folding />
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7898">
+              <folding>
+                <marker date="1398295402003" expanded="true" signature="1050:1076" placeholder="{...}" />
+                <marker date="1398295402003" expanded="true" signature="1202:1293" placeholder="{...}" />
+                <marker date="1398295402003" expanded="true" signature="1327:1451" placeholder="{...}" />
+                <marker date="1398295402003" expanded="true" signature="1481:1623" placeholder="{...}" />
+                <marker date="1398295402003" expanded="true" signature="1982:2034" placeholder="{...}" />
+                <marker date="1398295402003" expanded="true" signature="2084:2154" placeholder="{...}" />
+                <marker date="1398295402003" expanded="true" signature="2183:2276" placeholder="{...}" />
+                <marker date="1398295402003" expanded="true" signature="2339:2385" placeholder="{...}" />
+                <marker date="1398295402003" expanded="true" signature="4026:4072" placeholder="{...}" />
+                <marker date="1398295402003" expanded="true" signature="4096:4112" placeholder="{...}" />
+                <marker date="1398295402003" expanded="true" signature="4163:4192" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Settings.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Settings.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ExpressApp/public/stylesheets/Settings.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="161" column="11" selection-start="2403" selection-end="2403" vertical-scroll-proportion="0.7069922" vertical-offset="2905" max-vertical-offset="4400">
+            <state line="145" column="19" selection-start="2165" selection-end="2165" vertical-scroll-proportion="0.0" vertical-offset="2707" max-vertical-offset="4400">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ExpressApp/routes/user.js">
+      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ExpressApp/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="286">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ExpressApp/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="1188">
+            <state line="100" column="37" selection-start="2301" selection-end="2301" vertical-scroll-proportion="0.0" vertical-offset="1738" max-vertical-offset="4180">
               <folding />
             </state>
           </provider>
@@ -155,11 +166,12 @@
         <option value="$PROJECT_DIR$/Checklist/checklist.html" />
         <option value="$PROJECT_DIR$/ExpressApp/public/stylesheets/Login.css" />
         <option value="$PROJECT_DIR$/ExpressApp/views/login.ejs" />
-        <option value="$PROJECT_DIR$/ExpressApp/views/settings.ejs" />
-        <option value="$PROJECT_DIR$/ExpressApp/public/javascripts/Settings.js" />
         <option value="$PROJECT_DIR$/ExpressApp/views/checklist.ejs" />
         <option value="$PROJECT_DIR$/ExpressApp/public/stylesheets/checklist.css" />
         <option value="$PROJECT_DIR$/ExpressApp/public/stylesheets/Settings.css" />
+        <option value="$PROJECT_DIR$/ExpressApp/public/javascripts/Settings.js" />
+        <option value="$PROJECT_DIR$/ExpressApp/routes/index.js" />
+        <option value="$PROJECT_DIR$/ExpressApp/views/settings.ejs" />
       </list>
     </option>
   </component>
@@ -854,13 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ExpressApp/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="2751" max-vertical-offset="3652">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LoginPage/Login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="6" selection-start="71" selection-end="71" vertical-scroll-proportion="-2.8387096" vertical-offset="0" max-vertical-offset="836">
@@ -896,31 +901,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ExpressApp/views/settings.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="80" selection-start="913" selection-end="913" vertical-scroll-proportion="-16.32258" vertical-offset="66" max-vertical-offset="1034">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExpressApp/public/javascripts/Settings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="67" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1672">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExpressApp/views/checklist.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="78" selection-start="767" selection-end="767" vertical-scroll-proportion="-14.193548" vertical-offset="132" max-vertical-offset="1144">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ChecklistDesigner/checklist.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6292">
-          <folding />
+          <folding>
+            <marker date="1398295402003" expanded="true" signature="1050:1076" placeholder="{...}" />
+            <marker date="1398295402003" expanded="true" signature="1202:1293" placeholder="{...}" />
+            <marker date="1398295402003" expanded="true" signature="1327:1451" placeholder="{...}" />
+            <marker date="1398295402003" expanded="true" signature="1481:1623" placeholder="{...}" />
+            <marker date="1398295402003" expanded="true" signature="1982:2034" placeholder="{...}" />
+            <marker date="1398295402003" expanded="true" signature="2084:2154" placeholder="{...}" />
+            <marker date="1398295402003" expanded="true" signature="2183:2276" placeholder="{...}" />
+            <marker date="1398295402003" expanded="true" signature="2339:2385" placeholder="{...}" />
+            <marker date="1398295402003" expanded="true" signature="4026:4072" placeholder="{...}" />
+            <marker date="1398295402003" expanded="true" signature="4096:4112" placeholder="{...}" />
+            <marker date="1398295402003" expanded="true" signature="4163:4192" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -933,7 +929,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ExpressApp/public/stylesheets/Settings.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="11" selection-start="2403" selection-end="2403" vertical-scroll-proportion="0.7069922" vertical-offset="2905" max-vertical-offset="4400">
+        <state line="145" column="19" selection-start="2165" selection-end="2165" vertical-scroll-proportion="0.0" vertical-offset="2707" max-vertical-offset="4400">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExpressApp/public/javascripts/checklist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="5236">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExpressApp/views/checklist.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="78" selection-start="767" selection-end="767" vertical-scroll-proportion="-18.451612" vertical-offset="0" max-vertical-offset="1144">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExpressApp/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="37" selection-start="2301" selection-end="2301" vertical-scroll-proportion="0.0" vertical-offset="1738" max-vertical-offset="4180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExpressApp/public/javascripts/Settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="1" selection-start="2212" selection-end="2212" vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="1672">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExpressApp/views/settings.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="22" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.7586207" vertical-offset="0" max-vertical-offset="1188">
           <folding />
         </state>
       </provider>
