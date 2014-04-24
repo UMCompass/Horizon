@@ -228,7 +228,7 @@ exports.logout = function(req,res){
 	}
 	else{
 		req.session.destroy(function(){
-			res.render('login');
+			res.redirect('/');
 		});
 	}
 };
