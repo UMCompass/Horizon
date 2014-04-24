@@ -16,6 +16,8 @@ Formatting the left hand side
 
 */
 
+
+
 #leftside{
 	float:left;
 	height: 100%;
@@ -24,6 +26,100 @@ Formatting the left hand side
 	top: 0%;
 	left: 0%;
 }
+
+
+/*
+
+Formatting for the color selector
+
+*/
+
+
+#editingMenu{
+	position: relative;
+	float: left;
+	top: 20px;
+	left: 20px;
+	width: 100px;
+	height: 60px;
+}
+
+#editColorsButton{
+	text-align: center;
+	width: 100%;
+	height: auto;
+	cursor: default;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font-family: "Euphemia UCAS";
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#coverDiv{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+#colorMenu{
+	position: relative;
+	border-style: solid;
+	width: 400px;
+	height: auto;
+	left: 40%;
+	top: 30%;
+	background-color: white;
+}
+
+#colorList{
+	list-style-type: none;
+	padding-left: 0;
+	width: 100%;
+}
+
+#colorList li{
+	position: relative;
+	width: 300px;
+}
+
+.colorChooserDiv{
+}
+
+.colorName{
+	position: relative;
+	width:auto;
+	float:left;
+	height: 20px;
+}
+
+/*
+
+Formatting for New Topic button
+
+*/
+
+#newTopicButton{
+	text-align: center;
+	width: 100%;
+	height: auto;
+	cursor: default;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font-family: "Euphemia UCAS";
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+/*
+
+Formatting the sidebar menu
+
+*/
+
 
 #sidebar{
 	position: absolute;
@@ -175,19 +271,42 @@ Formatting the Center and Checklist
 #titleAndChecklist{
 	position: relative;
 	left: 10%;
-	top:10%;
+	top: 10%;
 	width: 100%;
 	height: 100%;
 }
 
+#titleBox{
+	position: relative;
+	width: 100%;
+	height: auto;
+	float:left;
+	vertical-align: text-bottom;
+}
+
 #title{
+	float:left;
 	position: relative;
 	left:0%;
 	font-size: 40;
-	vertical-align: bottom;
 	padding-bottom: 10px;
 	font-family: "Euphemia UCAS";
 	font-weight: bold;
+	float: left;
+}
+
+#addElement{
+	float: left;
+	position: relative;
+	margin-top: 15px;
+	margin-left: 30px;
+	padding: 2px;
+	text-align: center;
+	cursor: default;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font-family: "Euphemia UCAS";
 }
 
 #checklist{
@@ -277,77 +396,4 @@ Formatting the Center and Checklist
 .instructionsBox ul li{
 	padding-bottom: 5px;
 }
-
-
-/*
-
-Formatting for the color selector
-
-*/
-
-
-#editColorsButton{
-	position: absolute;
-	left: 20px;
-	top: 30px;
-	width: auto;
-	height: auto;
-	cursor: default;
-	border-style: solid;
-	border-color: black;
-	background-color: white;
-	font-family: "Euphemia UCAS";
-	padding-left: 10px;
-	padding-right: 10px;
-}
-
-#coverDiv{
-	position: fixed;
-	width: 100%;
-	height: 100%;
-}
-
-#colorMenu{
-	position: relative;
-	border-style: solid;
-	width: 400px;
-	height: auto;
-	left: 40%;
-	top: 30%;
-	background-color: white;
-}
-
-#colorList{
-	list-style-type: none;
-	padding-left: 0;
-	width: 100%;
-}
-
-#colorList li{
-	position: relative;
-	width: 300px;
-}
-
-.colorChooserDiv{
-
-}
-
-.colorName{
-	position: relative;
-	width:auto;
-	float:left;
-	height: 20px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
