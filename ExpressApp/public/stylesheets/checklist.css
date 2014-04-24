@@ -53,7 +53,7 @@ Formatting the left hand side
 	margin-top: 0px;
 	margin-bottom: 0px;
 	font-family: "Euphemia UCAS";
-	font-size: 18;
+	font-size: 18pt;
 	line-height: 120%;
 	text-indent: 40px;
 	color:white;
@@ -92,9 +92,9 @@ Formatting the left hand side
 	float:right;
 	position:absolute;
 	left: 5%;
-	top: 90%%;
+	top: 90%;
 	color: #FFCCCC;
-	font-size: 16;
+	font-size: 16pt;
 	font-family: "Euphemia UCAS";
 	font-weight: bold;
 }
@@ -103,9 +103,9 @@ Formatting the left hand side
 	float:left;
 	position:absolute;
 	left: 15%;
-	top: 93%%;
+	top: 93%;
 	color: #FFCCCC;
-	font-size: 12;
+	font-size: 12pt;
 	font-family: "Euphemia UCAS";
 	font-weight: bold;
 }
@@ -128,11 +128,16 @@ Formatting the Center and Checklist
 	overflow: hidden;
 }
 
+#logout {
+	text-decoration: none;
+
+}
+
 #navMenu{
 	position: relative;
 	top: 0;
 	float:right;
-	right: 10px;
+	right: 80px;
 	width: 240px;
 	height: 40px;
 }
@@ -143,6 +148,32 @@ Formatting the Center and Checklist
 	height: 100%;
 	vertical-align: bottom;
 }
+
+#navMenu>div#navLogout {
+	position: relative;
+	height: 100%;
+	width: 80px;
+	float:right;
+	right: -90px;
+	top: -20px;
+}
+
+#navMenu #checklist {
+    text-decoration: none;
+    background-color: #FFCC00;
+    border-style: solid;
+    border-color: #FFCC00;
+    padding-top: 21%;
+}
+
+#navMenu #settings {
+    text-decoration: none;
+}
+
+:link {color: #000000}
+:visited {color: #000000}
+:hover {color: #000000}
+:active {color: #000000}
 
 .navContainer{
 	width: 80px;
@@ -163,7 +194,7 @@ Formatting the Center and Checklist
 #title{
 	position: relative;
 	left:0%;
-	font-size: 40;
+	font-size: 30pt;
 	vertical-align: bottom;
 	padding-bottom: 10px;
 	font-family: "Euphemia UCAS";
@@ -237,14 +268,14 @@ Formatting the Center and Checklist
 	height: 50%;
 	width: 100%;
 	font-weight: bold;
-	font-size: 18;
+	font-size: 18pt;
 }
 
 .dateBox{
 	height: 50%;
 	width: 100%;
 	color:gray;
-	font-size: 14;
+	font-size: 14pt;
 }
 
 .instructionsBox ul{
@@ -253,7 +284,7 @@ Formatting the Center and Checklist
 	width: auto;
 	position: relative;
 	font-family: Georgia;
-	font-size: 14;
+	font-size: 14pt;
 	list-style-type: none;
 }
 
