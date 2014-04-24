@@ -38,10 +38,12 @@
             </div>
             <div id="title">Change Settings</div>
 			
+            <% if(error) { %>
+               <div class="error"> <%= error %> </p> 
+            <% } %> 
+
             <% if(success) { %>
-            <p> <%= success %> </p>
-            <% } else { %>
-            <P> <% error %> </p>
+            <div class="success"><%= success %> </p>
                 <% } %>
         </div>
     </div>
