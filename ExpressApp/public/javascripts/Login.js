@@ -34,6 +34,6 @@ $(document).ready(function(){
                 '<input id="newEmail" type="text" name="email"><br>' +
                 '<input id="submit" type="submit" value="Create">' +
             '</form>';
-    })
+    });
 
 });
