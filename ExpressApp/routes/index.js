@@ -74,7 +74,7 @@ exports.register = function(req,res){
 			var users = db.collection('users');
 			users.findOne({username:user},function(err,item){
 				if (item===null){
-					var newUser = {username: user,password:pass,email:email};
+					var newUser = {username: user,password:pass,email:email,admin:false};
 					users.insert(newUser,function(err,result){
 						if (err) throw err;
 						console.log(result);
@@ -151,9 +151,7 @@ exports.settingUpdate = function(req,res){
 	else{
 		MongoClient.connect('mongodb://localhost:27017',function(err,db){
 			var users = db.collection('users');	
-
 			if( newUsr != undefined ){
-
 				console.log(newUsr.length);
 
 				if(newUsr.length > 5) {
