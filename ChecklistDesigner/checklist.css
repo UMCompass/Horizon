@@ -271,9 +271,12 @@ Formatting the Center and Checklist
 #titleAndChecklist{
 	position: relative;
 	left: 10%;
-	top: 10%;
+	/*top: 10%;*/
+	min-height: 70%;
+	float:left;
 	width: 100%;
-	height: 100%;
+	height: auto;
+	padding-bottom: 10px;
 }
 
 #titleBox{
@@ -295,18 +298,8 @@ Formatting the Center and Checklist
 	float: left;
 }
 
-#addElement{
-	float: left;
-	position: relative;
-	margin-top: 15px;
-	margin-left: 30px;
-	padding: 2px;
-	text-align: center;
-	cursor: default;
-	border-style: solid;
-	border-color: black;
-	background-color: white;
-	font-family: "Euphemia UCAS";
+#title:hover{
+	background-color: #FFCC00;
 }
 
 #checklist{
@@ -359,6 +352,12 @@ Formatting the Center and Checklist
 
 .itemHeadingBox{
 	height:50px;
+
+}
+
+.nameAndDate:hover{
+	padding-right: 10px;
+	background-color: #FFCC00;
 }
 
 .nameAndDate{
@@ -366,7 +365,7 @@ Formatting the Center and Checklist
 	float:left;
 	height:50px;
 	font-family: "Euphemia UCAS";
-	padding-left: 5px
+	padding-left: 5px;
 }
 
 .nameBox{
@@ -395,5 +394,9 @@ Formatting the Center and Checklist
 
 .instructionsBox ul li{
 	padding-bottom: 5px;
+}
+
+.instructionsBox ul li:hover{
+	background-color: #FFDDDD;
 }
 

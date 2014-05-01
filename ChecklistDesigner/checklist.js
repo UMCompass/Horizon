@@ -115,12 +115,12 @@ staticColors = {
 	'sidebarNoHilight' : 'rgba(0,0,0,0)'
 }
 
-function initializeEditingMenu(){
+/*function initializeEditingMenu(){
 	initializeColorButton();
 	initializeNewTopicButton();
-}
+}*/
 
-function initializeNewTopicButton(){
+/*function initializeNewTopicButton(){
 	editingMenu = document.getElementById("editingMenu");
 	newTopicButton = document.createElement("div");
 	newTopicButton.id = 'newTopicButton';
@@ -132,9 +132,9 @@ function initializeNewTopicButton(){
 	});
 
 	editingMenu.appendChild(newTopicButton);
-}
+}*/
 
-function initializeColorButton(){
+/*function initializeColorButton(){
 	editingMenu = document.getElementById("editingMenu");
 	editColorsButton = document.createElement("div");
 	editColorsButton.id = 'editColorsButton';
@@ -145,9 +145,9 @@ function initializeColorButton(){
 	});
 
 	editingMenu.appendChild(editColorsButton);
-}
+}*/
 
-
+/*
 function displayColorMenu(colors){
 	var coverDiv = document.createElement("div");
 	coverDiv.id = 'coverDiv';
@@ -201,7 +201,7 @@ function displayColorMenu(colors){
 		return false;
 	})
 
-}
+}*/
 
 
 function initializeSideBar(database){	
@@ -210,6 +210,7 @@ function initializeSideBar(database){
 
 	sidebarMenu = document.createElement("ul");
 	sidebarMenu.setAttribute("id", "sidebarMenu");
+
 	for (var i = 0; i<database.length; i++){
 		var menuItem = document.createElement("li");
 		menuItem.classList.add('sidebarItem');
@@ -274,18 +275,17 @@ function newElement(){
 	};
 }
 
+
 function addNewElement(topicIndex, database, checklistItem){
 	database[topicIndex]['elements'].push(newElement());
 	displayChecklistItem(checklistItem);
 }
 
+
 function changeElementName(element, topicIndex, database, checklistItem){
-	console.log(element.innerHTML);
 	var newName = prompt('Enter the new topic name', this.innerHTML);
 	if (newName!=null && newName!=''){
 		nameIndex = $($(element).closest('.item')).index();
-		console.log(nameIndex);
-		console.log(database[topicIndex]);
 		database[topicIndex]['elements'][nameIndex]['name'] = newName;
 		displayChecklistItem(checklistItem);
 	}
@@ -293,6 +293,7 @@ function changeElementName(element, topicIndex, database, checklistItem){
 
 
 function displayChecklistItem(checklistItem){
+	console.log(checklistItem);
 	$('#addElement').unbind('click');
 	var checklistDiv = document.getElementById('checklist');
 	while(checklistDiv.firstChild){
@@ -361,16 +362,28 @@ function displayChecklistItem(checklistItem){
 		checklist.appendChild(listItem);
 	}
 	checklistDiv.appendChild(checklist);
-	setTitle(current['name']);	
+	setTitle(current['name']);
+}
 
-	$('#addElement').click(function(){
-		addNewElement(topicIndex, database, checklistItem);
-	});
-	$(".nameBox").on("contextmenu",function(e){
-		e.preventDefault();
-		changeElementName(this, topicIndex, database, checklistItem);
-	});
+function findIndexFromTopicName(name, database){
+	for(i=0; i<database.length; i++){
+		if (database[i]['name'] === name){
+			return i;
+		}
+	}
+	console.log('Topic name ' + name +' not found.');
+	return null;
+}
 
+function findIndexFromElementName(elementName, topicName, database){
+	topicIndex = findIndexFromTopicName(topicName, database);
+	for(i=0; i<database[topicIndex].length; i++){
+		if (database[topicIndex]['elements'][i] === elementName){
+			return i;
+		}
+	}
+	console.log('Element name ' + elementName + ' not found.');
+	return null;
 }
 
 function setTitle(title){
@@ -378,15 +391,76 @@ function setTitle(title){
 	titleBox.innerHTML = title;
 }
 
+//Context menu
+function makeTitleContextMenu(){
+	$(function(){
+	    $.contextMenu({
+	        selector: '#title', 
+	        callback: function(key, options){
+	        	name = this[0].innerHTML;
+	        	console.log(name);
+	        	switch(key){
+
+	        		case 'Font Color':
+	        			console.log('Font Color Case');
+	        			break;
+
+	        		case 'New Element':
+	        			index = findIndexFromTopicName(name,database);
+	        			checklistElement = $(document.getElementById('sidebarMenu')
+	        				.getElementsByTagName('li')[index]);
+	        			addNewElement(findIndexFromTopicName(name, database), database, checklistElement);
+	        			console.log('New Element Case');
+	        			break;
+
+	        		default:
+	        			console.log('Case Not Identified');
+	        			break;
+	        	};
+			},
+	        items: {
+	            "Font Color": {name: "Font Color", icon: "edit"},
+	            "New Element": {name: "New Element", icon: "add"}
+	        }
+	    });
+	});
+}
+
+function makeContextMenus(){
+	makeTitleContextMenu();
+}
+
+function setItemHeadingsCallback(){
+	$(document).on('click', '.nameAndDate', displayItemHeadingInputs);
+}
+
+function displayItemHeadingInputs(){
+	// Set the z-index of element to 1000
+	console.log('running');
+	console.log(this);
+	//console.log(element);
+	//item = $(document.getElementById('checklist').getElementsByClassName('nameAndDate')[elementIndex]);
+	//console.log(item);
+	// Give the title box the call .titleEdit
+	// Global div cover (z index = 999)
+	// Give the div an on-click callback:
+	//		Reset any elements with the class .titleEdit
+	//		Remove the div
+	// change text to input boxes
+}
+
+
+
 function setColors(colors){
 	document.getElementById('leftside').style.background = colorDatabase['leftside'];
 	document.getElementById('center').style.background = colorDatabase['centerMain'];
 }
 
 $(document).ready(function(){
-	initializeEditingMenu();
 	initializeSideBar(database);
 	setColors(colorDatabase);
+	makeContextMenus();
+	setItemHeadingsCallback();
 
 	// Clicking on checkboxes
 	$(document).on('click', '.checkbox', function(){
@@ -400,6 +474,8 @@ $(document).ready(function(){
 			item.addClass('unchecked');
 		}
 	});
+
+
 });
 
 /*
