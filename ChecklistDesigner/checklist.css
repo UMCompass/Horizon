@@ -61,6 +61,7 @@ Formatting for the color selector
 	position: fixed;
 	width: 100%;
 	height: 100%;
+	z-index: 999;
 }
 
 #colorMenu{
@@ -355,9 +356,13 @@ Formatting the Center and Checklist
 
 }
 
-.nameAndDate:hover{
+.nameAndDate:hover:not(.focused){
 	padding-right: 10px;
 	background-color: #FFCC00;
+}
+
+.focused{
+	background-color: #AAAAAA;
 }
 
 .nameAndDate{

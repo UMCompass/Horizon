@@ -113,7 +113,9 @@ colorDatabase = {
 
 staticColors = {
 	'sidebarNoHilight' : 'rgba(0,0,0,0)'
-}
+};
+
+currentTopic = null;
 
 /*function initializeEditingMenu(){
 	initializeColorButton();
@@ -204,7 +206,7 @@ function displayColorMenu(colors){
 }*/
 
 
-function initializeSideBar(database){	
+function initializeSideBar(){	
 	sidebar = document.getElementById("sidebar");
 	sidebar.innerHTML = '';
 
@@ -239,14 +241,13 @@ function initializeSideBar(database){
 
 		this.classList.add("selected");
 		this.style.background = colorDatabase['sidebarHighlight'];
-
-		displayChecklistItem(that);
-
+		currentTopic = database[that.index()];
+		displayChecklistItem(currentTopic);
 	});
 
 		// Right-click on sidebar topics
 	$("#sidebarMenu>li").on("contextmenu",function(e){
-		e.preventDefault();
+		//e.preventDefault();
 		var topic = this.getElementsByClassName('menuItemContents')[0].innerHTML;
 		var newName = prompt('Enter the new topic name', topic);
 		//TODO: the condition should make sure there are no other topics with the same name
@@ -256,8 +257,80 @@ function initializeSideBar(database){
 			initializeSideBar(database);
 	   }
 	});
-
 }
+
+
+function displayChecklistItem(){
+	// Retrieve from the database the topic that was seleted.
+	checklistDiv = $('#checklist');
+	checklistDiv.empty()
+	var checklist = document.createElement('ul');
+	for (var i=0; i<currentTopic['elements'].length; i++)
+	{
+		currentElement = currentTopic['elements'][i];
+		//INDIVIDUAL ELEMENTS
+		listItem = document.createElement('li');
+		listItem.classList.add('item');
+		if (currentTopic['elements'][i]['checked']){
+			listItem.classList.add('checked');
+		}
+
+		box = document.createElement('div');
+
+		//ITEM HEADING BOX
+		itemHeadingBox = document.createElement('div');
+		itemHeadingBox.classList.add('itemHeadingBox');
+
+		//CHECKBOX
+		checkBox = document.createElement('div');
+		checkBox.classList.add('checkbox');
+		checkBox.innerHTML = '\u2713';
+
+		box.appendChild(checkBox);
+
+		//NAME AND DATE BOX
+		nameAndDateBox = document.createElement('div');
+		nameAndDateBox.classList.add('nameAndDate');
+
+		//NAME BOX
+		nameBox = document.createElement('div');
+		nameBox.classList.add('nameBox');
+		nameBox.innerHTML = currentElement['name'];
+		nameAndDateBox.appendChild(nameBox);
+
+		//DATE BOX
+		dateBox = document.createElement('div');
+		dateBox.classList.add('dateBox');
+		dateBox.innerHTML = currentElement['due'];
+		nameAndDateBox.appendChild(dateBox);
+
+		//Finalizing the heading and adding it to the item
+		itemHeadingBox.appendChild(checkBox);
+		itemHeadingBox.appendChild(nameAndDateBox);
+		box.appendChild(itemHeadingBox);
+
+		//INSTRUCTIONS BOX
+		instructionsBox = document.createElement('div');
+		instructionsBox.classList.add('instructionsBox');
+
+		instructionsList = document.createElement('ul');
+		instructionsList.classList.add('instructionsList');
+		for (var j=0; j<currentElement['text'].length; j++){
+			nextInstruction = document.createElement('li');
+			nextInstruction.innerHTML = currentElement['text'][j];
+			nextInstruction.classList.add('itemText');
+			instructionsList.appendChild(nextInstruction);
+		}
+		instructionsBox.appendChild(instructionsList);
+		box.appendChild(instructionsBox);
+
+		listItem.appendChild(box);
+		checklist.appendChild(listItem);
+	}
+	checklistDiv.append(checklist);
+	setTitle(currentTopic['name']);
+}
+
 
 function newTopic(){
 	return {
@@ -276,9 +349,9 @@ function newElement(){
 }
 
 
-function addNewElement(topicIndex, database, checklistItem){
-	database[topicIndex]['elements'].push(newElement());
-	displayChecklistItem(checklistItem);
+function addNewElement(){
+	currentTopic['elements'].push(newElement());
+	displayChecklistItem(currentTopic);
 }
 
 
@@ -292,80 +365,7 @@ function changeElementName(element, topicIndex, database, checklistItem){
 }
 
 
-function displayChecklistItem(checklistItem){
-	console.log(checklistItem);
-	$('#addElement').unbind('click');
-	var checklistDiv = document.getElementById('checklist');
-	while(checklistDiv.firstChild){
-		checklistDiv.removeChild(checklistDiv.firstChild);
-	}
-	var checklist = document.createElement('ul');
-	var topicIndex = checklistItem.index();
-	var current = database[topicIndex];
-	for (var i=0; i<current['elements'].length; i++)
-	{
-		singleElement = current['elements'][i];
-		//INDIVIDUAL ITEM
-		listItem = document.createElement('li');
-		listItem.classList.add('item');
-		listItem.classList.add('unchecked');
-
-		box = document.createElement('div');
-
-		//ITEM HEADING BOX
-		itemHeadingBox = document.createElement('div');
-		itemHeadingBox.classList.add('itemHeadingBox');
-
-		//CHECKBOX
-		checkBox = document.createElement('div');
-		checkBox.classList.add('checkbox');
-		checkBox.innerHTML = '\u2713';
-		singleElement['checked'] ? checkBox.classList.add('checked') : checkBox.classList.add('unchecked');
-
-		box.appendChild(checkBox);
-
-		//NAME AND DATE BOX
-		nameAndDateBox = document.createElement('div');
-		nameAndDateBox.classList.add('nameAndDate');
-
-		//NAME BOX
-		nameBox = document.createElement('div');
-		nameBox.classList.add('nameBox');
-		nameBox.innerHTML = singleElement['name'];
-		nameAndDateBox.appendChild(nameBox);
-
-		//DATE BOX
-		dateBox = document.createElement('div');
-		dateBox.classList.add('dateBox');
-		dateBox.innerHTML = singleElement['due'];
-		nameAndDateBox.appendChild(dateBox);
-
-		//Finalizing the heading and adding it to the item
-		itemHeadingBox.appendChild(checkBox);
-		itemHeadingBox.appendChild(nameAndDateBox);
-		box.appendChild(itemHeadingBox);
-
-		//INSTRUCTIONS BOX
-		instructionsBox = document.createElement('div');
-		instructionsBox.classList.add('instructionsBox');
-
-		instructionsList = document.createElement('ul');
-		for (var j=0; j<singleElement['text'].length; j++){
-			nextInstruction = document.createElement('li');
-			nextInstruction.innerHTML = singleElement['text'][j];
-			instructionsList.appendChild(nextInstruction);
-		}
-		instructionsBox.appendChild(instructionsList);
-		box.appendChild(instructionsBox);
-
-		listItem.appendChild(box);
-		checklist.appendChild(listItem);
-	}
-	checklistDiv.appendChild(checklist);
-	setTitle(current['name']);
-}
-
-function findIndexFromTopicName(name, database){
+/*function findIndexFromTopicName(name, database){
 	for(i=0; i<database.length; i++){
 		if (database[i]['name'] === name){
 			return i;
@@ -384,7 +384,7 @@ function findIndexFromElementName(elementName, topicName, database){
 	}
 	console.log('Element name ' + elementName + ' not found.');
 	return null;
-}
+}*/
 
 function setTitle(title){
 	titleBox = document.getElementById('title');
@@ -397,8 +397,6 @@ function makeTitleContextMenu(){
 	    $.contextMenu({
 	        selector: '#title', 
 	        callback: function(key, options){
-	        	name = this[0].innerHTML;
-	        	console.log(name);
 	        	switch(key){
 
 	        		case 'Font Color':
@@ -406,10 +404,7 @@ function makeTitleContextMenu(){
 	        			break;
 
 	        		case 'New Element':
-	        			index = findIndexFromTopicName(name,database);
-	        			checklistElement = $(document.getElementById('sidebarMenu')
-	        				.getElementsByTagName('li')[index]);
-	        			addNewElement(findIndexFromTopicName(name, database), database, checklistElement);
+	        			addNewElement();
 	        			console.log('New Element Case');
 	        			break;
 
@@ -426,29 +421,119 @@ function makeTitleContextMenu(){
 	});
 }
 
+function makeItemContextMenu(){
+	$(function(){
+		$.contextMenu({
+			selector: '.nameAndDate:not(.focused)',
+			callback: function(key, options){
+				switch(key){
+					case 'Change Heading':
+						console.log('Change Heading');
+						console.log(this[0]);
+						displayItemHeadingInputs(this[0]);
+						break;
+					case 'Delete Element':
+						console.log('deleting');
+				};
+			},
+			items: {
+				'Change Heading': {name: "Change Heading", icon: 'edit'},
+				'Deleve': {name: "Delete Element", icon: 'edit'}
+			}
+		});
+	});
+}
+
 function makeContextMenus(){
 	makeTitleContextMenu();
+	makeItemContextMenu();
 }
 
-function setItemHeadingsCallback(){
-	$(document).on('click', '.nameAndDate', displayItemHeadingInputs);
+function setElementHeadingsCallback(){
+	$(document).on('click', '.nameAndDate:not(.focused)', displayItemHeadingInputs);
 }
 
-function displayItemHeadingInputs(){
+function setInstructionsCallback(){
+	$(document).on('click', '.itemText:not(.focused)', displayInstructionsInputs);
+}
+
+function displayItemHeadingInputs(item){
 	// Set the z-index of element to 1000
-	console.log('running');
-	console.log(this);
-	//console.log(element);
-	//item = $(document.getElementById('checklist').getElementsByClassName('nameAndDate')[elementIndex]);
-	//console.log(item);
-	// Give the title box the call .titleEdit
+	console.log(item);
+	item.classList.add('focused');
+	elementIndex = ($(item).parents('.item').index());
+	$(item).css('z-index', 1000);
 	// Global div cover (z index = 999)
-	// Give the div an on-click callback:
-	//		Reset any elements with the class .titleEdit
-	//		Remove the div
+	globalDivCover = document.createElement('div');
+	globalDivCover.id = 'coverDiv';
+	$('#everything').append(globalDivCover);
+
+	nameBox = $(item).children('.nameBox')[0];
+	dateBox = $(item).children('.dateBox')[0];
+
+	elementName = nameBox.innerHTML;
+	elementDate = dateBox.innerHTML;
+	nameBox.innerHTML = '';
+	dateBox.innerHTML = '';
+
+	nameEntry = document.createElement('input');
+	nameEntry.type = 'text';
+	nameEntry.value = elementName;
+	nameBox.appendChild(nameEntry);
+
+	dateEntry = document.createElement('input');
+	dateEntry.type = 'text';
+	dateEntry.value = elementDate;
+	dateBox.appendChild(dateEntry);
+
+	$(document).on('click', '#coverDiv', function(){
+		item.remove();
+		$('.focused').removeClass('focused');
+		currentTopic['elements'][elementIndex]['name'] = nameEntry.value;
+		currentTopic['elements'][elementIndex]['due'] = dateEntry.value;
+		displayChecklistItem();
+		document.getElementById('coverDiv').remove();
+	});
+	/*
+	$(globalDivCover).click(function(){
+		item.remove();
+		$('.focused').removeClass('focused');
+		currentTopic['elements'][elementIndex]['name'] = nameEntry.value;
+		currentTopic['elements'][elementIndex]['due'] = dateEntry.value;
+		displayChecklistItem();
+	});*/
+
 	// change text to input boxes
 }
 
+
+function displayInstructionsInputs(){
+	thisIndex = $(this).index();
+	elementIndex = ($(this).parents('.this').index());
+	$(this).css('z-index', 1000);
+	// Global div cover (z index = 999)
+	globalDivCover = document.createElement('div');
+	globalDivCover.id = 'coverDiv';
+	$(globalDivCover).css('z-index', 999);
+	$('#everything').append(globalDivCover);
+
+	text = this.innerHTML;
+	this.innerHTML = '';
+
+	textEntry = document.createElement('input');
+	textEntry.type = 'text';
+	textEntry.value = text;
+	textEntry.classList.add('focused');
+	//textEntry.style.zIndex = '1000';
+	this.appendChild(textEntry);
+
+	$(globalDivCover).click(function(){
+		this.remove();
+		$('.focused').removeClass('focused');
+		currentTopic['elements'][elementIndex]['text'][thisIndex] = textEntry.value;
+		displayChecklistthis();
+	});
+}
 
 
 function setColors(colors){
@@ -456,11 +541,13 @@ function setColors(colors){
 	document.getElementById('center').style.background = colorDatabase['centerMain'];
 }
 
+
+// On loading the webpage.
 $(document).ready(function(){
 	initializeSideBar(database);
 	setColors(colorDatabase);
 	makeContextMenus();
-	setItemHeadingsCallback();
+	setInstructionsCallback();
 
 	// Clicking on checkboxes
 	$(document).on('click', '.checkbox', function(){
@@ -477,6 +564,14 @@ $(document).ready(function(){
 
 
 });
+
+/*
+
+Things that must be done:
+	Fix item input.
+
+*/
+
 
 /*
 
@@ -497,5 +592,7 @@ Highlight checkbox when you hover over
 Scroll bar to indicate the items are scrollable
 
 Animate the overflow of of the sidebar topics
+
+Make the cover opaque when editing element info
 
 */
