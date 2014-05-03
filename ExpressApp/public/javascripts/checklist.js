@@ -47,7 +47,7 @@ function setColors(colors){
 }
 
 
-function displayChecklistItem(checklistItem, i){
+function displayChecklistItem(checklistItem){
 	var checklistDiv = document.getElementById('checklist');
 	while(checklistDiv.firstChild){
 		checklistDiv.removeChild(checklistDiv.firstChild);
@@ -59,60 +59,68 @@ function displayChecklistItem(checklistItem, i){
 	//Contains:
 	//sidebar item name and checklist (which contains an array of item names and corresponding text for each item) 
 
-	//INDIVIDUAL ITEM
-	listItem = document.createElement('li');
-	listItem.classList.add('item');
-	listItem.classList.add('unchecked');
+	var i = 0;
+	while(checklistItem.Checklist[i] != undefined){
 
-	box = document.createElement('div');
 
-	//ITEM HEADING BOX
-	itemHeadingBox = document.createElement('div');
-	itemHeadingBox.classList.add('itemHeadingBox');
+		//INDIVIDUAL ITEM
+		listItem = document.createElement('li');
+		listItem.classList.add('item');
+		listItem.classList.add('unchecked');
 
-	//CHECKBOX
-	checkBox = document.createElement('div');
-	checkBox.classList.add('checkbox');
-	checkBox.innerHTML = '\u2713';
-	box.appendChild(checkBox);
+		box = document.createElement('div');
 
-	//NAME AND DATE BOX
-	nameAndDateBox = document.createElement('div');
-	nameAndDateBox.classList.add('nameAndDate');
+		//ITEM HEADING BOX
+		itemHeadingBox = document.createElement('div');
+		itemHeadingBox.classList.add('itemHeadingBox');
 
-	//NAME BOX
-	nameBox = document.createElement('div');
-	nameBox.classList.add('nameBox');
-	console.log("Name Box: " + checklistItem.Checklist[i].name)
-	nameBox.innerHTML = checklistItem.Checklist[i].name;
-	nameAndDateBox.appendChild(nameBox);
+		//CHECKBOX
+		checkBox = document.createElement('div');
+		checkBox.classList.add('checkbox');
+		checkBox.innerHTML = '\u2713';
+		box.appendChild(checkBox);
 
-	//DATE BOX
-	dateBox = document.createElement('div');
-	dateBox.classList.add('dateBox');
-	dateBox.innerHTML = checklistItem.Checklist[i].name;
-	nameAndDateBox.appendChild(dateBox);
+		//NAME AND DATE BOX
+		nameAndDateBox = document.createElement('div');
+		nameAndDateBox.classList.add('nameAndDate');
 
-	//Finalizing the heading and adding it to the item
-	itemHeadingBox.appendChild(checkBox);
-	itemHeadingBox.appendChild(nameAndDateBox);
-	box.appendChild(itemHeadingBox);
+		//NAME BOX
+		nameBox = document.createElement('div');
+		nameBox.classList.add('nameBox');
+		console.log("Name Box: " + checklistItem.Checklist[i].name)
+		nameBox.innerHTML = checklistItem.Checklist[i].name;
+		nameAndDateBox.appendChild(nameBox);
 
-	//INSTRUCTIONS BOX
-	instructionsBox = document.createElement('div');
-	instructionsBox.classList.add('instructionsBox');
+		//DATE BOX
+		dateBox = document.createElement('div');
+		dateBox.classList.add('dateBox');
+		dateBox.innerHTML = checklistItem.Checklist[i].date;
+		nameAndDateBox.appendChild(dateBox);
 
-	instructionsList = document.createElement('ul');
-	for (var j=0; j <3; j++){
-		nextInstruction = document.createElement('li');
-		nextInstruction.innerHTML = checklistItem.Checklist[i].text[j];
-		instructionsList.appendChild(nextInstruction);
+		//Finalizing the heading and adding it to the item
+		itemHeadingBox.appendChild(checkBox);
+		itemHeadingBox.appendChild(nameAndDateBox);
+		box.appendChild(itemHeadingBox);
+
+		//INSTRUCTIONS BOX
+		instructionsBox = document.createElement('div');
+		instructionsBox.classList.add('instructionsBox');
+
+		instructionsList = document.createElement('ul');
+		for (var j=0; j <3; j++){
+			nextInstruction = document.createElement('li');
+			nextInstruction.innerHTML = checklistItem.Checklist[i].text[j];
+			instructionsList.appendChild(nextInstruction);
+		}
+		instructionsBox.appendChild(instructionsList);
+		box.appendChild(instructionsBox);
+
+		listItem.appendChild(box);
+		checklist.appendChild(listItem);
+
+		i++;
 	}
-	instructionsBox.appendChild(instructionsList);
-	box.appendChild(instructionsBox);
-
-	listItem.appendChild(box);
-	checklist.appendChild(listItem);
+	
 	
 	checklistDiv.appendChild(checklist);
 	setTitle(checklistItem.name);
@@ -136,12 +144,7 @@ function display(index) {
     		that.removeChild(that.firstChild);
     	}
 
-    	var i = 0;
-    	while(theList[index].Checklist[i] != undefined) {
-    		displayChecklistItem(theList[index], i);
-    		i++;
-    	}
-		
+		displayChecklistItem(theList[index]);
 }
 
 $(document).ready(function(){
@@ -158,24 +161,6 @@ $(document).ready(function(){
  	});
 
 	setColors(colorDatabase);
-
-	/*$("#sidebarMenu>li").click(function(){
-		var that = $(this);
-		var sel = $("#sidebarMenu>li.selected");
-		if (sel.length!=0){
-			sel.css('background-color', colorDatabase['sidebarNoHilight']);
-			sel.removeClass("selected");
-		}
-
-		while (that.firstChild) {
-    		that.removeChild(that.firstChild);
-    	}
-
-		this.classList.add("selected");
-		this.style.background = colorDatabase['sidebarHighlight'];
-		displayChecklistItem(0);
-
-	});*/
 
 	// Hovering over topics in the sidebar
 	$("#sidebarMenu>li").on("mouseover", function(){
