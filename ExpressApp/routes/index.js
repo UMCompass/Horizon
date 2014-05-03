@@ -145,7 +145,8 @@ exports.settings = function(req,res){
 			error: req.flash('error'),
             curName: user.username,
             curPass: user.password,
-            curMail: user.email
+            curMail: user.email,
+            curType: user.admin
 		});
 	}
 };
@@ -157,6 +158,14 @@ exports.settingUpdate = function(req,res){
 	var pass1 = req.body.newPass;
 	var pass2 = req.body.newPass2;
 	var email = req.body.newEmail;
+    var admin;
+
+    if (req.body.newType === Student) {
+        admin = false;
+    }
+    if (req.body.newType === Designer) {
+        admin = true;
+    }
 
 	if(!user){
 		res.redirect('/');
@@ -223,6 +232,16 @@ exports.settingUpdate = function(req,res){
 				req.flash('success', "Email changed!")
 				res.redirect('settings');
 			}
+            else if( admin != undefined) {
+
+                console.log(admin);
+
+                users.update({admin: user.admin}, { $set: {admin: admin} }, function(err,result){
+                        if (err) throw err;
+                    })
+                req.flash('success', "Account type set!");
+                res.redirect('settings');
+            }
 			else
 				req.flash('error', "Error.")
 				res.redirect('settings');

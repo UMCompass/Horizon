@@ -15,6 +15,7 @@
                     <li id="username">Username</li>
                     <li id="password">Password</li>
                     <li id="email">Email</li>
+                    <li id="userType">Account Type</li>
                 </ul>
             </div>
             <div id='compass'>The UMass Compass</div>
@@ -49,6 +50,17 @@
                 <div id="curEmail">
                     <div id="lbl">Current Email:</div>
                     <div id="info"><%= curMail %></div>
+                </div>
+                <div id="curAccountType">
+                    <div id="lbl">Current Account Type:</div>
+                    <div id="info">
+                        <% if (curType === false) { %>
+                            <p>Student</p>
+                        <% } %>
+                        <% if (curType === true) { %>
+                            <p>Designer</p>
+                        <% } %>
+                    </div>
                 </div>
             </div>
 			
