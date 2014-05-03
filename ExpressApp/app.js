@@ -38,6 +38,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.login);
 app.get('/settings',routes.settings);
 app.post('/settingUpdate', routes.settingUpdate);
+app.get('/retrieve', routes.retrieve);
 app.get('/checklist',routes.checklist);
 app.get('/designer', routes.designerChecklist);
 app.post('/register',routes.register);

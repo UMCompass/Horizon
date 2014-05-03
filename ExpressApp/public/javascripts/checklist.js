@@ -1,59 +1,3 @@
-database ={
-	"Housing": 	[['Sign Housing Contract', 'Some relevant due date', 'Sign the housing contract found on <a href="https://www.spire.umass.edu">Spire</a>', 'Log on and then select the Main Menu tab, then the Housing tab', 'The Residential Hall Contract will be found here'],
-				['Complete the Roommate Preference Form', 'Some relevant date', 'Log on to <a href="https://www.spire.umass.edu">Spire</a> ', 'You will find the "Preference Application" in the same tab the above', 'this is also more text'],
-				['Request an appointment', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-	"Registration": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-	"Financial Aid": [['Apply to Fafsa', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-	"Future Milestone 1": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-	"Future Milestone 2": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-	"Future Milestone 3": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-	"Future Milestone 4": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-				['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 5": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 6": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 7": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 8": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 9": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 10": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 11": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 32": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 22": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 1337": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone l33t": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone 13e7": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestone leet": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "So many Milestones": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Here are some more mile stones": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "more milestones": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "Future Milestones?": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']],
-    "This scrolling feature is pretty impressive": [['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text'],
-        ['name', 'date', 'this is text for this thing', 'this is more text', 'this is also more text']]
-
-			}
 
 colorDatabase = {
 	'sidebarMain': "rgba(128, 0, 0, 1)",
@@ -69,16 +13,17 @@ colorDatabase = {
 
 };
 
+var theList;
 
-function initializeSideBar(database){
+function initializeSideBar(chlist){
 	
 	sidebar = document.getElementById("sidebar");
 	sidebarMenu = document.createElement("ul");
 	sidebarMenu.setAttribute("id", "sidebarMenu");
 
-	for (entry in database){
+	for (var i =0; i < chlist.length; i++){
 		var menuItem = document.createElement("li");
-		menuItem.innerHTML = entry;
+		menuItem.innerHTML = chlist[i].name;
 		menuItem.classList.add('sidebarItem');
 		sidebarMenu.appendChild(menuItem);
 	}
@@ -105,7 +50,14 @@ function displayChecklistItem(checklistItem){
 	}
 
 	var checklist = document.createElement('ul');
-	var current = database[checklistItem];
+
+	//checklistItem is an array
+	//Contains:
+	//	sidebar item name and checklist (which contains an array of item names and corresponding text for each item) 
+	var current = checklistItem;
+
+
+	console.log("Item: "+current);
 	for (var i=0; i<current.length; i++){
 		singleItem = current[i];
 
@@ -133,13 +85,13 @@ function displayChecklistItem(checklistItem){
 		//NAME BOX
 		nameBox = document.createElement('div');
 		nameBox.classList.add('nameBox');
-		nameBox.innerHTML = singleItem[0];
+		nameBox.innerHTML = singleItem.Checklist[0].name;
 		nameAndDateBox.appendChild(nameBox);
 
 		//DATE BOX
 		dateBox = document.createElement('div');
 		dateBox.classList.add('dateBox');
-		dateBox.innerHTML = singleItem[1];
+		dateBox.innerHTML = singleItem.Checklist[0].name;
 		nameAndDateBox.appendChild(dateBox);
 
 		//Finalizing the heading and adding it to the item
@@ -152,9 +104,9 @@ function displayChecklistItem(checklistItem){
 		instructionsBox.classList.add('instructionsBox');
 
 		instructionsList = document.createElement('ul');
-		for (var j=2; j<singleItem.length; j++){
+		for (var j=0; j <3; j++){
 			nextInstruction = document.createElement('li');
-			nextInstruction.innerHTML = singleItem[j];
+			nextInstruction.innerHTML = singleItem.Checklist[0].text[j];
 			instructionsList.appendChild(nextInstruction);
 		}
 		instructionsBox.appendChild(instructionsList);
@@ -168,13 +120,44 @@ function displayChecklistItem(checklistItem){
 	
 }
 
+function setList(x) {
+	theList = x; 
+}
+
+function display(index) {
+
+	var that = $(this);
+		var sel = $("#sidebarMenu>li.selected");
+		if (sel.length!=0){
+			sel.css('background-color', colorDatabase['sidebarNoHilight']);
+			sel.removeClass("selected");
+		}
+
+		while (that.firstChild) {
+    		that.removeChild(that.firstChild);
+    	}
+
+		this.classList.add("selected");
+		this.style.background = colorDatabase['sidebarHighlight'];
+		displayChecklistItem(theList[index]);
+}
 
 $(document).ready(function(){
-	initializeSideBar(database);
+
+	//AJAX call to retrieve checklist data
+	//Returned: data returned in the form of an array
+
+	$.get( '/retrieve', function(data) {
+
+		console.log(data[0].name);
+ 		var list = data;
+ 		setList(list); // Set global list variable
+ 		initializeSideBar(list);	
+ 	});
 
 	setColors(colorDatabase);
 
-	$("#sidebarMenu>li").click(function(){
+	/*$("#sidebarMenu>li").click(function(){
 		var that = $(this);
 		var sel = $("#sidebarMenu>li.selected");
 		if (sel.length!=0){
@@ -188,9 +171,9 @@ $(document).ready(function(){
 
 		this.classList.add("selected");
 		this.style.background = colorDatabase['sidebarHighlight'];
-		displayChecklistItem(this.innerHTML);
+		displayChecklistItem(0);
 
-	});
+	});*/
 
 	// Hovering over topics in the sidebar
 	$("#sidebarMenu>li").on("mouseover", function(){

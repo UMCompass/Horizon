@@ -1,6 +1,9 @@
 
 //Freddy Nguyen
 
+
+var chlist = require('../lib/retrieve');
+
 var MongoClient = require('mongodb').MongoClient;
 
 exports.index = function(req, res){
@@ -234,3 +237,26 @@ exports.logout = function(req,res){
 		});
 	}
 };
+
+exports.retrieve = function(req, res) {
+	var user = req.session.user;
+
+	if(!user) {
+		res.redirect('/');
+	}
+	else {
+		/*chlist.getList(function(list) {
+			res.send(list);
+		}); */ 
+		MongoClient.connect('mongodb://localhost:27017',function(err,db){
+			var collection = db.collection('checklist');
+			goodies = collection.find().toArray(function(err,result){
+						if (err) throw err;
+						var x = JSON.stringify(result);
+						console.log(result[0].name);
+						res.send(result);
+			});
+			//res.send(goodies);
+		});
+	}
+}

@@ -117,94 +117,6 @@ staticColors = {
 
 currentTopic = null;
 
-/*function initializeEditingMenu(){
-	initializeColorButton();
-	initializeNewTopicButton();
-}*/
-
-/*function initializeNewTopicButton(){
-	editingMenu = document.getElementById("editingMenu");
-	newTopicButton = document.createElement("div");
-	newTopicButton.id = 'newTopicButton';
-	newTopicButton.innerHTML = 'Add Topic';
-
-	$(document).on('click', '#newTopicButton', function(){
-		database.push(newTopic());
-		initializeSideBar(database);
-	});
-
-	editingMenu.appendChild(newTopicButton);
-}*/
-
-/*function initializeColorButton(){
-	editingMenu = document.getElementById("editingMenu");
-	editColorsButton = document.createElement("div");
-	editColorsButton.id = 'editColorsButton';
-	editColorsButton.innerHTML = 'Color Palette';
-
-	$(document).on('click', '#editColorsButton', function(){
-		displayColorMenu(colorDatabase);
-	});
-
-	editingMenu.appendChild(editColorsButton);
-}*/
-
-/*
-function displayColorMenu(colors){
-	var coverDiv = document.createElement("div");
-	coverDiv.id = 'coverDiv';
-	var everything = document.getElementById("everything");
-	everything.appendChild(coverDiv);
-
-	var colorMenu = document.createElement('div');
-	colorMenu.id = 'colorMenu';
-	var colorList = document.createElement('ul');
-	colorList.id = 'colorList';
-
-	for(entry in colorDatabase){
-		var colorItem = document.createElement('li');
-		var nextColor = document.createElement('div');
-		nextColor.classList.add('colorChooserDiv');
-		var colorName = document.createElement('div');
-		colorName.innerHTML = entry
-		colorName.classList.add('colorName');
-		colorItem.appendChild(colorName);
-
-		var chooser = document.createElement('input');
-		chooser.classList.add('color');
-		chooser.value = colors[entry];
-
-		nextColor.appendChild(chooser);
-		colorItem.appendChild(nextColor)
-		colorList.appendChild(colorItem);
-	}
-	colorMenu.appendChild(colorList);
-	coverDiv.appendChild(colorMenu);
-	jscolor.init();
-
-	$(document).on('click', '#coverDiv', function(e){
-		e.preventDefault();
-		var colorList = document.getElementById('colorList');
-		var items = colorList.getElementsByTagName('li');
-
-		for (var i=0; i<items.length; i++){
-			var newColor ='#' + items[i].getElementsByClassName('color')[0].value;
-			colorDatabase[items[i].getElementsByClassName('colorName')[0].innerHTML] = newColor;
-		}
-		cover = document.getElementById('coverDiv');
-		document.getElementById('everything').removeChild(cover);
-
-		setColors(colorDatabase);
-	});
-
-
-
-	$(document).on('click', '#colorMenu', function(){
-		return false;
-	})
-
-}*/
-
 
 function initializeSideBar(){	
 	sidebar = document.getElementById("sidebar");
@@ -364,28 +276,6 @@ function changeElementName(element, topicIndex, database, checklistItem){
 	}
 }
 
-
-/*function findIndexFromTopicName(name, database){
-	for(i=0; i<database.length; i++){
-		if (database[i]['name'] === name){
-			return i;
-		}
-	}
-	console.log('Topic name ' + name +' not found.');
-	return null;
-}
-
-function findIndexFromElementName(elementName, topicName, database){
-	topicIndex = findIndexFromTopicName(topicName, database);
-	for(i=0; i<database[topicIndex].length; i++){
-		if (database[topicIndex]['elements'][i] === elementName){
-			return i;
-		}
-	}
-	console.log('Element name ' + elementName + ' not found.');
-	return null;
-}*/
-
 function setTitle(title){
 	titleBox = document.getElementById('title');
 	titleBox.innerHTML = title;
@@ -494,14 +384,6 @@ function displayItemHeadingInputs(item){
 		displayChecklistItem();
 		document.getElementById('coverDiv').remove();
 	});
-	/*
-	$(globalDivCover).click(function(){
-		item.remove();
-		$('.focused').removeClass('focused');
-		currentTopic['elements'][elementIndex]['name'] = nameEntry.value;
-		currentTopic['elements'][elementIndex]['due'] = dateEntry.value;
-		displayChecklistItem();
-	});*/
 
 	// change text to input boxes
 }
