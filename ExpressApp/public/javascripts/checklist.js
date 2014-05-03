@@ -22,6 +22,8 @@ function initializeSideBar(chlist){
 	sidebarMenu.setAttribute("id", "sidebarMenu");
 
 	for (var i =0; i < chlist.length; i++){
+		
+		//Make List Items Clickable by wrapping them in <a> tags
 		var hrefTagging = document.createElement("a");
 		hrefTagging.setAttribute('onclick', 'display('+i+');');
 		var menuItem = document.createElement("li");
