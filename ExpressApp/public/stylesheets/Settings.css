@@ -144,6 +144,9 @@ Formatting the left hand side
     border-style: solid;
     border-color: #FFCC00;
     padding-top: 30%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 #navMenu #checklist {
@@ -192,4 +195,27 @@ Formatting the left hand side
     font-weight: bold;
     line-height: 120%;
     color: #800000;
+}
+
+#center #curSettings{
+    border-top: solid;
+    position: relative;
+    padding-top: 1%;
+    top: 10%;
+    left: 10%;
+    width: 50%;
+    font-family: "Euphemia UCAS";
+    font-size: 18pt;
+    line-height: 120%;
+}
+
+#center #curSettings #lbl{
+    color: #800000;
+    font-weight: bold;
+}
+
+#center #curSettings #info{
+    position: relative;
+    padding-bottom: 3%;
+    left: 20%;
 }

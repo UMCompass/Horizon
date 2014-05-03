@@ -138,7 +138,10 @@ exports.settings = function(req,res){
 		res.render('settings', {
 			title: "UMass Compass",
 			success: req.flash('success'),
-			error: req.flash('error')
+			error: req.flash('error'),
+            curName: user.username,
+            curPass: user.password,
+            curMail: user.email
 		});
 	}
 };
@@ -253,7 +256,7 @@ exports.retrieve = function(req, res) {
 			goodies = collection.find().toArray(function(err,result){
 						if (err) throw err;
 						var x = JSON.stringify(result);
-						console.log(result[0].name);
+						/*console.log(result[0].name);*/
 						res.send(result);
 			});
 			//res.send(goodies);

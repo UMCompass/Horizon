@@ -36,7 +36,21 @@
                     <div class='nacContainer'><a href="/logout" id="logout">Logout</a></div>
                 </div>
             </div>
-            <div id="title">Change Settings</div>
+            <div id="title">Current Settings</div>
+            <div id="curSettings">
+                <div id="curName">
+                    <div id="lbl">Current Username:</div>
+                    <div id="info"><%= curName %></div>
+                </div>
+                <div id="curPass">
+                    <div id="lbl">Current Password:</div>
+                    <div id="info"><%= curPass %></div>
+                </div>
+                <div id="curEmail">
+                    <div id="lbl">Current Email:</div>
+                    <div id="info"><%= curMail %></div>
+                </div>
+            </div>
 			
             <% if(error) { %>
               <p> <div class="error"> <%= error %> </p> 
