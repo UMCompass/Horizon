@@ -47,7 +47,7 @@ function setColors(colors){
 }
 
 
-function displayChecklistItem(checklistItem){
+function displayChecklistItem(checklistItem, i){
 	var checklistDiv = document.getElementById('checklist');
 	while(checklistDiv.firstChild){
 		checklistDiv.removeChild(checklistDiv.firstChild);
@@ -57,68 +57,63 @@ function displayChecklistItem(checklistItem){
 
 	//checklistItem is an array
 	//Contains:
-	//	sidebar item name and checklist (which contains an array of item names and corresponding text for each item) 
-	var current = checklistItem;
+	//sidebar item name and checklist (which contains an array of item names and corresponding text for each item) 
 
+	//INDIVIDUAL ITEM
+	listItem = document.createElement('li');
+	listItem.classList.add('item');
+	listItem.classList.add('unchecked');
 
-	console.log("Item: "+current);
-	for (var i=0; i<current.length; i++){
-		singleItem = current[i];
+	box = document.createElement('div');
 
-		//INDIVIDUAL ITEM
-		listItem = document.createElement('li');
-		listItem.classList.add('item');
-		listItem.classList.add('unchecked');
+	//ITEM HEADING BOX
+	itemHeadingBox = document.createElement('div');
+	itemHeadingBox.classList.add('itemHeadingBox');
 
-		box = document.createElement('div');
+	//CHECKBOX
+	checkBox = document.createElement('div');
+	checkBox.classList.add('checkbox');
+	checkBox.innerHTML = '\u2713';
+	box.appendChild(checkBox);
 
-		//ITEM HEADING BOX
-		itemHeadingBox = document.createElement('div');
-		itemHeadingBox.classList.add('itemHeadingBox');
+	//NAME AND DATE BOX
+	nameAndDateBox = document.createElement('div');
+	nameAndDateBox.classList.add('nameAndDate');
 
-		//CHECKBOX
-		checkBox = document.createElement('div');
-		checkBox.classList.add('checkbox');
-		checkBox.innerHTML = '\u2713';
-		box.appendChild(checkBox);
+	//NAME BOX
+	nameBox = document.createElement('div');
+	nameBox.classList.add('nameBox');
+	console.log("Name Box: " + checklistItem.Checklist[i].name)
+	nameBox.innerHTML = checklistItem.Checklist[i].name;
+	nameAndDateBox.appendChild(nameBox);
 
-		//NAME AND DATE BOX
-		nameAndDateBox = document.createElement('div');
-		nameAndDateBox.classList.add('nameAndDate');
+	//DATE BOX
+	dateBox = document.createElement('div');
+	dateBox.classList.add('dateBox');
+	dateBox.innerHTML = checklistItem.Checklist[i].name;
+	nameAndDateBox.appendChild(dateBox);
 
-		//NAME BOX
-		nameBox = document.createElement('div');
-		nameBox.classList.add('nameBox');
-		nameBox.innerHTML = singleItem.Checklist[0].name;
-		nameAndDateBox.appendChild(nameBox);
+	//Finalizing the heading and adding it to the item
+	itemHeadingBox.appendChild(checkBox);
+	itemHeadingBox.appendChild(nameAndDateBox);
+	box.appendChild(itemHeadingBox);
 
-		//DATE BOX
-		dateBox = document.createElement('div');
-		dateBox.classList.add('dateBox');
-		dateBox.innerHTML = singleItem.Checklist[0].name;
-		nameAndDateBox.appendChild(dateBox);
+	//INSTRUCTIONS BOX
+	instructionsBox = document.createElement('div');
+	instructionsBox.classList.add('instructionsBox');
 
-		//Finalizing the heading and adding it to the item
-		itemHeadingBox.appendChild(checkBox);
-		itemHeadingBox.appendChild(nameAndDateBox);
-		box.appendChild(itemHeadingBox);
-
-		//INSTRUCTIONS BOX
-		instructionsBox = document.createElement('div');
-		instructionsBox.classList.add('instructionsBox');
-
-		instructionsList = document.createElement('ul');
-		for (var j=0; j <3; j++){
-			nextInstruction = document.createElement('li');
-			nextInstruction.innerHTML = singleItem.Checklist[0].text[j];
-			instructionsList.appendChild(nextInstruction);
-		}
-		instructionsBox.appendChild(instructionsList);
-		box.appendChild(instructionsBox);
-
-		listItem.appendChild(box);
-		checklist.appendChild(listItem);
+	instructionsList = document.createElement('ul');
+	for (var j=0; j <3; j++){
+		nextInstruction = document.createElement('li');
+		nextInstruction.innerHTML = checklistItem.Checklist[i].text[j];
+		instructionsList.appendChild(nextInstruction);
 	}
+	instructionsBox.appendChild(instructionsList);
+	box.appendChild(instructionsBox);
+
+	listItem.appendChild(box);
+	checklist.appendChild(listItem);
+	
 	checklistDiv.appendChild(checklist);
 	setTitle(checklistItem.name);
 	
@@ -141,8 +136,12 @@ function display(index) {
     		that.removeChild(that.firstChild);
     	}
 
-    	
-		displayChecklistItem(theList[index]);
+    	var i = 0;
+    	while(theList[index].Checklist[i] != undefined) {
+    		displayChecklistItem(theList[index], i);
+    		i++;
+    	}
+		
 }
 
 $(document).ready(function(){
