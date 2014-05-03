@@ -10,6 +10,13 @@
 <body>
     <div id="everything">
         <div id="leftside">
+
+            <% if(error) { %>
+               <span id="error"> <%= error %></span>
+            <% } %> <% if(authorize) { %>
+                <span id="authorize"> <%= authorize %> </span>
+                <% } %>
+
             <form method="post" action="authorize">
                 <label for="username">Username:</label>
                 <input id="username" type="text" name="username"><br>

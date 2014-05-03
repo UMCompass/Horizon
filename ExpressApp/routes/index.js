@@ -20,7 +20,10 @@ exports.login = function(req,res){
 		res.redirect('checklist');
 	}
 	else{
-		res.render('login');
+		res.render('login', {
+			error: req.flash('error'),
+			authorize: req.flash('authorize')
+		});
 	}
 };
 
@@ -84,6 +87,7 @@ exports.register = function(req,res){
 				}
 
 				else{
+					req.flash('error', 'That username is taken already!');
 					res.redirect('/');
 				}
 			});
