@@ -1,5 +1,5 @@
 
-//Freddy Nguyen
+//Freddy Nguyen & Jason Dale
 
 
 var chlist = require('../lib/retrieve');
@@ -71,8 +71,10 @@ exports.register = function(req,res){
 	var pass = req.body.password;
 	var repass = req.body.passwordretyped;
 	var email = req.body.email;
+	var type = req.body.usertype.toString();
 	if(!(user && pass && repass && email) || pass!=repass){
 		res.redirect('/');
+		req.flash('error','You didn\'t put in all the fields');
 	}
 
 	else{
@@ -80,13 +82,15 @@ exports.register = function(req,res){
 			var users = db.collection('users');
 			users.findOne({username:user},function(err,item){
 				if (item===null){
-					var newUser = {username: user,password:pass,email:email,admin:false};
+					var admin = false;
+					if (type=='designer') admin = true;
+					var newUser = {username: user,password:pass,email:email,admin:admin};
 					users.insert(newUser,function(err,result){
 						if (err) throw err;
 						console.log(result);
 					});
 					req.session.user = newUser;
-					res.redirect('checklist');
+					res.redirect('/checklist');
 				}
 
 				else{

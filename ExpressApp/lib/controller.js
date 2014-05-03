@@ -1,4 +1,7 @@
 
 
 var MongoClient = require('mongodb').MongoClient;
-var goodies;
+
+function saveTopic(topicID, topicObject){
+	
+}
