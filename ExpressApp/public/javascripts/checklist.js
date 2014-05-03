@@ -22,10 +22,14 @@ function initializeSideBar(chlist){
 	sidebarMenu.setAttribute("id", "sidebarMenu");
 
 	for (var i =0; i < chlist.length; i++){
+		var hrefTagging = document.createElement("a");
+		hrefTagging.setAttribute('onclick', 'display('+i+');');
 		var menuItem = document.createElement("li");
 		menuItem.innerHTML = chlist[i].name;
 		menuItem.classList.add('sidebarItem');
-		sidebarMenu.appendChild(menuItem);
+
+		hrefTagging.appendChild(menuItem);
+		sidebarMenu.appendChild(hrefTagging);
 	}
 
 	sidebar.appendChild(sidebarMenu);
@@ -116,7 +120,7 @@ function displayChecklistItem(checklistItem){
 		checklist.appendChild(listItem);
 	}
 	checklistDiv.appendChild(checklist);
-	setTitle(checklistItem);
+	setTitle(checklistItem.name);
 	
 }
 
@@ -137,8 +141,7 @@ function display(index) {
     		that.removeChild(that.firstChild);
     	}
 
-		this.classList.add("selected");
-		this.style.background = colorDatabase['sidebarHighlight'];
+    	
 		displayChecklistItem(theList[index]);
 }
 
