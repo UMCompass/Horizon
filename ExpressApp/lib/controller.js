@@ -1,10 +1,53 @@
 
+//Freddy Nguyen
 
 var MongoClient = require('mongodb').MongoClient;
 
 function saveTopic(topicID, topicObject){
-	
+	MongoClient.connect('mongodb://localhost:27017', function(err,db){
+		var topics = db.collection('topics');
+		topics.findOne({_id:topicID},function(err,item){
+			if (item===null){
+				topicObject["_id"] = topicID;
+				topics.insert(topicObject,function(err,result){
+					if (err) {
+						throw err;
+						return false;
+					}
+					console.log(result);
+				});
+			}
+			else{
+				topics.remove({_id: topicID});
+				topicObject["_id"] = topicID;
+				topics.insert(topicObject,function(err,result){
+					if (err){
+						throw err;
+						return false;
+					}
+					console.log(result);
+				});
+			}
+		});
+	});
 }
+
+function deleteTopic(topicID){
+	MongoClient.connect('mongodb://localhost:27017',function(err,db){
+		var topics = db.collection('topics');
+		topics.findOne({_id:topicID},function(err,item){
+			if(item===null){
+				console.log("no topic with such an ID");
+				return false;
+			}
+			else{
+				topics.remove({_id:topicID});
+				return true;
+			}
+		});
+	});
+}
+
 
 
 function getTopics() {
