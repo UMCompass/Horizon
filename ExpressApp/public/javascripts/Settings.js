@@ -42,6 +42,12 @@ function displaySettingsItem(settingsItem){
             '<input id="newEmail" type="text" name="newEmail"><br>' +
             '<input id="submit" type="submit" value="Change Email">'
     }
+    else if (settingsItem.id === "userType") {
+        form.innerHTML = "" +
+            '<label for="newType">Select an Account Type:</label><br>' +
+            '<select id="newType" name="newType"> <option value="Student">Student</option> <option value="Designer">Designer</option> </select><br>' +
+            '<input id="submit" type="submit" value="Change Account Type">'
+    }
 
     center.appendChild(form);
 }
