@@ -2,7 +2,7 @@
 //Freddy Nguyen & Jason Dale
 
 
-var chlist = require('../lib/retrieve');
+var chlist = require('../lib/controller');
 
 var MongoClient = require('mongodb').MongoClient;
 
