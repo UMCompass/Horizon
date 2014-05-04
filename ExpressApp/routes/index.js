@@ -2,7 +2,7 @@
 //Freddy Nguyen & Jason Dale
 
 
-var chlist = require('../lib/retrieve');
+//var chlist = require('../lib/retrieve');
 
 var MongoClient = require('mongodb').MongoClient;
 
@@ -160,12 +160,12 @@ exports.settingUpdate = function(req,res){
 	var email = req.body.newEmail;
     var admin;
 
-    if (req.body.newType === Student) {
+    if (req.body.newType === 'Student') {
         admin = false;
     }
-    if (req.body.newType === Designer) {
+    if (req.body.newType === 'Designer') {
         admin = true;
-    }
+    } 
 
 	if(!user){
 		res.redirect('/');
@@ -234,11 +234,10 @@ exports.settingUpdate = function(req,res){
 			}
             else if( admin != undefined) {
 
-                console.log(admin);
-
-                users.update({admin: user.admin}, { $set: {admin: admin} }, function(err,result){
+                users.update({username: user.username}, { $set: {admin: admin} }, function(err,result){
                         if (err) throw err;
                     })
+                
                 req.flash('success', "Account type set!");
                 res.redirect('settings');
             }
