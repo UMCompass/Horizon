@@ -248,7 +248,7 @@ Formatting the Center and Checklist
 	position: relative;
 	top: 0;
 	float:right;
-	right: 80px;
+	right: 10px;
 	width: 240px;
 	height: 40px;
 }
@@ -258,15 +258,6 @@ Formatting the Center and Checklist
 	width: 80px;
 	height: 100%;
 	vertical-align: bottom;
-}
-
-#navMenu>div#navLogout {
-	position: relative;
-	
-	width: 80px;
-	float:right;
-	right: -35%;
-	top: -100%;
 }
 
 .navContainer{

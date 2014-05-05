@@ -156,19 +156,6 @@ function initializeSideBar(){
 		currentTopic = database[that.index()];
 		displayChecklistItem(currentTopic);
 	});
-
-		// Right-click on sidebar topics
-	$("#sidebarMenu>li").on("contextmenu",function(e){
-		//e.preventDefault();
-		var topic = this.getElementsByClassName('menuItemContents')[0].innerHTML;
-		var newName = prompt('Enter the new topic name', topic);
-		//TODO: the condition should make sure there are no other topics with the same name
-		if (newName!=null && newName!=''){
-			topicIndex = $(this).index();
-			database[topicIndex]['name'] = newName;
-			initializeSideBar(database);
-	   }
-	});
 }
 
 
@@ -261,27 +248,23 @@ function newElement(){
 }
 
 
-function addNewElement(){
-	currentTopic['elements'].push(newElement());
-	displayChecklistItem(currentTopic);
-}
-
-
-function changeElementName(element, topicIndex, database, checklistItem){
-	var newName = prompt('Enter the new topic name', this.innerHTML);
-	if (newName!=null && newName!=''){
-		nameIndex = $($(element).closest('.item')).index();
-		database[topicIndex]['elements'][nameIndex]['name'] = newName;
-		displayChecklistItem(checklistItem);
-	}
-}
 
 function setTitle(title){
 	titleBox = document.getElementById('title');
 	titleBox.innerHTML = title;
 }
 
-//Context menu
+function makeContextMenus(){
+	makeTitleContextMenu();
+	makeItemContextMenu();
+	makeInstructionsContextMenu();
+	makeSidebarContextMenu();
+}
+
+
+
+//	Context menu for the Title
+
 function makeTitleContextMenu(){
 	$(function(){
 	    $.contextMenu({
@@ -289,13 +272,19 @@ function makeTitleContextMenu(){
 	        callback: function(key, options){
 	        	switch(key){
 
-	        		case 'Font Color':
-	        			console.log('Font Color Case');
+	        		case 'Edit Name':
+	        			displayTitleInput();
+	        			console.log('Edit Name Case');
 	        			break;
 
 	        		case 'New Element':
 	        			addNewElement();
 	        			console.log('New Element Case');
+	        			break;
+
+	        		case 'Delete Topic':
+	        			deleteCurrentTopic();
+	        			console.log('Delete Topic');
 	        			break;
 
 	        		default:
@@ -304,12 +293,55 @@ function makeTitleContextMenu(){
 	        	};
 			},
 	        items: {
-	            "Font Color": {name: "Font Color", icon: "edit"},
-	            "New Element": {name: "New Element", icon: "add"}
+	            "Edit Name": {name: "Edit Name", icon: "edit"},
+	            "New Element": {name: "New Element", icon: "add"},
+	            "Delete Topic": {name: "Delete Topic", icon: "delete"}
 	        }
 	    });
 	});
 }
+
+function displayTitleInput(){
+	title = $('#title')[0];
+	titleText = title.innerHTML;
+	title.innerHTML = '';
+	title.classList.add('focused');
+
+	titleEntry = document.createElement('input');
+	titleEntry.type = 'text';
+	titleEntry.value = titleText;
+	title.appendChild(titleEntry);
+
+	globalDivCover = document.createElement('div');
+	globalDivCover.id = 'coverDiv';
+	$('#everything').append(globalDivCover);
+
+	$(globalDivCover).click(function(){
+		titleEntry.remove();
+		$('.focused').removeClass('focused');
+		currentTopic['name'] = titleEntry.value;
+		initializeSideBar();
+		displayChecklistItem();
+		document.getElementById('coverDiv').remove();
+	});	
+}
+
+function addNewElement(){
+	currentTopic['elements'].push(newElement());
+	displayChecklistItem(currentTopic);
+}
+
+function deleteCurrentTopic(){
+	topicIndex = database.indexOf(currentTopic);
+	database.splice(topicIndex, 1);
+	initializeSideBar();
+	console.log($('#title'));
+	$('#title')[0].innerHTML = 'Welcome!';
+	$('#checklist')[0].innerHTML = '';
+}
+
+
+//	Context menu for items
 
 function makeItemContextMenu(){
 	$(function(){
@@ -318,42 +350,31 @@ function makeItemContextMenu(){
 			callback: function(key, options){
 				switch(key){
 					case 'Change Heading':
-						console.log('Change Heading');
-						console.log(this[0]);
 						displayItemHeadingInputs(this[0]);
 						break;
+					case 'New Instructions':
+						addNewInstruction(this[0]);
+						console.log('New Instrucions')
+						break;
 					case 'Delete Element':
+						deleteElement(this[0]);
 						console.log('deleting');
+						break;
 				};
 			},
 			items: {
 				'Change Heading': {name: "Change Heading", icon: 'edit'},
-				'Deleve': {name: "Delete Element", icon: 'edit'}
+				'New Instructions': {name: "New Instructions", icon: 'add'},
+				'Delete Element': {name: "Delete Element", icon: 'delete'}
 			}
 		});
 	});
 }
 
-function makeContextMenus(){
-	makeTitleContextMenu();
-	makeItemContextMenu();
-}
-
-function setElementHeadingsCallback(){
-	$(document).on('click', '.nameAndDate:not(.focused)', displayItemHeadingInputs);
-}
-
-function setInstructionsCallback(){
-	$(document).on('click', '.itemText:not(.focused)', displayInstructionsInputs);
-}
-
 function displayItemHeadingInputs(item){
-	// Set the z-index of element to 1000
-	console.log(item);
 	item.classList.add('focused');
 	elementIndex = ($(item).parents('.item').index());
 	$(item).css('z-index', 1000);
-	// Global div cover (z index = 999)
 	globalDivCover = document.createElement('div');
 	globalDivCover.id = 'coverDiv';
 	$('#everything').append(globalDivCover);
@@ -376,7 +397,7 @@ function displayItemHeadingInputs(item){
 	dateEntry.value = elementDate;
 	dateBox.appendChild(dateEntry);
 
-	$(document).on('click', '#coverDiv', function(){
+	$(globalDivCover).click(function(){
 		item.remove();
 		$('.focused').removeClass('focused');
 		currentTopic['elements'][elementIndex]['name'] = nameEntry.value;
@@ -384,38 +405,108 @@ function displayItemHeadingInputs(item){
 		displayChecklistItem();
 		document.getElementById('coverDiv').remove();
 	});
+}
 
-	// change text to input boxes
+function addNewInstruction(element){
+	insList = $(element).parents('.item')[0];
+	elementIndex = $(insList).index();
+	currentTopic['elements'][elementIndex]['text'].push('New Instruction');
+	displayChecklistItem();
 }
 
 
-function displayInstructionsInputs(){
-	thisIndex = $(this).index();
-	elementIndex = ($(this).parents('.this').index());
-	$(this).css('z-index', 1000);
+function deleteElement(element){
+	elementIndex = $(element).parents('.item').index();
+	currentTopic['elements'].splice(elementIndex, 1);
+	displayChecklistItem();
+}
+
+
+function makeInstructionsContextMenu(){
+	$(function(){
+		$.contextMenu({
+			selector: '.itemText:not(.focused)',
+			callback: function(key, options){
+				switch(key){
+					case 'Edit Text':
+						displayInstructionsInputs(this[0]);
+						break;
+					case 'Delete':
+						deleteInstruction(this[0]);
+						console.log('deleting');
+						break;
+				};
+			},
+			items: {
+				'Edit Text': {name: "Edit Text", icon: 'edit'},
+				'Delete': {name: "Delete", icon: 'delete'}
+			}
+		});
+	});
+}
+
+
+
+function displayInstructionsInputs(ins){
+	console.log(ins);
+	insIndex = $(ins).index();
+	elementIndex = ($(ins).parents('.item').index());
+	$(ins).css('z-index', 1000);
 	// Global div cover (z index = 999)
 	globalDivCover = document.createElement('div');
 	globalDivCover.id = 'coverDiv';
 	$(globalDivCover).css('z-index', 999);
 	$('#everything').append(globalDivCover);
 
-	text = this.innerHTML;
-	this.innerHTML = '';
+	text = ins.innerHTML;
+	ins.innerHTML = '';
 
 	textEntry = document.createElement('input');
 	textEntry.type = 'text';
 	textEntry.value = text;
 	textEntry.classList.add('focused');
-	//textEntry.style.zIndex = '1000';
-	this.appendChild(textEntry);
+	ins.appendChild(textEntry);
 
 	$(globalDivCover).click(function(){
-		this.remove();
+		ins.remove();
 		$('.focused').removeClass('focused');
-		currentTopic['elements'][elementIndex]['text'][thisIndex] = textEntry.value;
-		displayChecklistthis();
+		currentTopic['elements'][elementIndex]['text'][insIndex] = textEntry.value;
+		displayChecklistItem();
+		$(ins).unbind('click');
+		document.getElementById('coverDiv').remove();
 	});
 }
+
+function deleteInstruction(ins){
+	insIndex = $(ins).index();
+	elementIndex = ($(ins).parents('.item').index());
+	currentTopic['elements'][elementIndex]['text'].splice(insIndex, 1);
+	displayChecklistItem();
+}
+
+
+function makeSidebarContextMenu(){
+	$(function(){
+		$.contextMenu({
+			selector: '#leftside',
+			callback: function(key, options){
+				switch(key){
+					case 'New Topic':
+						newT = newTopic();
+						//This is where you will need to find a way to give the topic an ID.
+						database.push(newTopic());
+						initializeSideBar();
+						console.log('New Topic');
+						break;
+				};
+			},
+			items: {
+				'New Topic': {name: "New Topic", icon: 'add'}
+			}
+		});
+	});
+}
+
 
 
 function setColors(colors){
@@ -429,7 +520,7 @@ $(document).ready(function(){
 	initializeSideBar(database);
 	setColors(colorDatabase);
 	makeContextMenus();
-	setInstructionsCallback();
+	//setInstructionsCallback();
 
 	// Clicking on checkboxes
 	$(document).on('click', '.checkbox', function(){
@@ -443,38 +534,40 @@ $(document).ready(function(){
 			item.addClass('unchecked');
 		}
 	});
-
-
 });
+
 
 /*
 
-Things that must be done:
-	Fix item input.
+Known Bugs:
+	Fix inputs on INSTRUCTIONS and on TITLE. There appears to be an issue with how the covering div'z Z-index
+	is behaving. It's lower then the input's z-index, but is still covering it for some reason.
 
+	When you add a new topic to the sidebar, the highlight disappears.
 */
 
 
 /*
 
-Display 3/5 or the like to show how much a certain topic is completed
+Things to do in the future:
+	Display 3/5 or the like to show how much a certain topic is completed
 
-Set the mouse icon for its different hovers
+	Set the mouse icon for its different hovers
 
-Turn mouse into a checkmark when hovering over the checkbox?
+	Turn mouse into a checkmark when hovering over the checkbox?
 
-Collapse items that are "completed" 
+	Collapse items that are "completed" 
 
-Items that are completed should say if after their due date
+	Items that are completed should say if after their due date
 
-Prevent highlighting on the checkboxk
+	Prevent highlighting on the checkboxk
 
-Highlight checkbox when you hover over
+	Highlight checkbox when you hover over
 
-Scroll bar to indicate the items are scrollable
+	Scroll bar to indicate the items are scrollable
 
-Animate the overflow of of the sidebar topics
+	Animate the overflow of of the sidebar topics
 
-Make the cover opaque when editing element info
+	Make the cover opaque when editing element info
 
 */

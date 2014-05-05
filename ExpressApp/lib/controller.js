@@ -59,7 +59,7 @@ function getTopics() {
 						if (err) throw err;
 			});
 
-			for(var i = 0; i <  x.length) {
+			for(var i = 0; i <  x.length;x++) {
 				results.push(x[i].name);
 			}
 
@@ -72,7 +72,7 @@ function getElementsForTopic(topic) {
 			var collection = db.collection('topics');
 			var results = {};
 
-			var x = collection.find(name:topic).toArray(function(err,result){
+			var x = collection.find({name:topic}).toArray(function(err,result){
 						if (err) throw err;
 			});
 
