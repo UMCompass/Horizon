@@ -1,5 +1,5 @@
 
-//Freddy Nguyen
+//Freddy Nguyen & Jason Dale
 
 var MongoClient = require('mongodb').MongoClient;
 
