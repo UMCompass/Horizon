@@ -32,6 +32,11 @@ $(document).ready(function(){
                 '<input id="newPassword2" type="password" name="passwordretyped"><br>' +
                 '<label for="newEmail">Email:</label><br>' +
                 '<input id="newEmail" type="text" name="email"><br>' +
+                '<label for="usertype">Who are you?</label><br>'+
+                '<select name="usertype">'+
+                    '<option value="student">Student</option>'+
+                    '<option value="designer">Designer</option>'+
+                '</select><br>'+
                 '<input id="submit" type="submit" value="Create">' +
             '</form>';
     });

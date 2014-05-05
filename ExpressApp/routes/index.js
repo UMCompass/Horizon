@@ -1,8 +1,9 @@
 
-//Freddy Nguyen
+//Freddy Nguyen & Jason Dale
 
 
-var chlist = require('../lib/retrieve');
+var chlist = require('../lib/controller');
+
 
 var MongoClient = require('mongodb').MongoClient;
 
@@ -71,8 +72,10 @@ exports.register = function(req,res){
 	var pass = req.body.password;
 	var repass = req.body.passwordretyped;
 	var email = req.body.email;
+	var type = req.body.usertype.toString();
 	if(!(user && pass && repass && email) || pass!=repass){
 		res.redirect('/');
+		req.flash('error','You didn\'t put in all the fields');
 	}
 
 	else{
@@ -80,13 +83,15 @@ exports.register = function(req,res){
 			var users = db.collection('users');
 			users.findOne({username:user},function(err,item){
 				if (item===null){
-					var newUser = {username: user,password:pass,email:email,admin:false};
+					var admin = false;
+					if (type=='designer') admin = true;
+					var newUser = {username: user,password:pass,email:email,admin:admin};
 					users.insert(newUser,function(err,result){
 						if (err) throw err;
 						console.log(result);
 					});
 					req.session.user = newUser;
-					res.redirect('checklist');
+					res.redirect('/checklist');
 				}
 
 				else{
@@ -141,7 +146,8 @@ exports.settings = function(req,res){
 			error: req.flash('error'),
             curName: user.username,
             curPass: user.password,
-            curMail: user.email
+            curMail: user.email,
+            curType: user.admin
 		});
 	}
 };
@@ -153,6 +159,14 @@ exports.settingUpdate = function(req,res){
 	var pass1 = req.body.newPass;
 	var pass2 = req.body.newPass2;
 	var email = req.body.newEmail;
+    var admin;
+
+    if (req.body.newType === 'Student') {
+        admin = false;
+    }
+    if (req.body.newType === 'Designer') {
+        admin = true;
+    } 
 
 	if(!user){
 		res.redirect('/');
@@ -219,6 +233,15 @@ exports.settingUpdate = function(req,res){
 				req.flash('success', "Email changed!")
 				res.redirect('settings');
 			}
+            else if( admin != undefined) {
+
+                users.update({username: user.username}, { $set: {admin: admin} }, function(err,result){
+                        if (err) throw err;
+                    })
+                
+                req.flash('success', "Account type set!");
+                res.redirect('settings');
+            }
 			else
 				req.flash('error', "Error.")
 				res.redirect('settings');
@@ -248,18 +271,12 @@ exports.retrieve = function(req, res) {
 		res.redirect('/');
 	}
 	else {
-		/*chlist.getList(function(list) {
-			res.send(list);
-		}); */ 
 		MongoClient.connect('mongodb://localhost:27017',function(err,db){
 			var collection = db.collection('checklist');
 			goodies = collection.find().toArray(function(err,result){
 						if (err) throw err;
-						var x = JSON.stringify(result);
-						/*console.log(result[0].name);*/
 						res.send(result);
 			});
-			//res.send(goodies);
 		});
 	}
 }
