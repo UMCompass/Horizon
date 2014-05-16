@@ -181,8 +181,6 @@ exports.settingUpdate = function(req,res){
 				if(newUsr.length > 5) {
 					users.update({username: user.username}, { $set: {username: newUsr} },function(err,result){
 						if (err) throw err;
-						//console.log(result);
-
 					});
 					req.flash('success', 'Username has been changed!');
 					res.redirect('settings');

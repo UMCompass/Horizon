@@ -33,3 +33,6 @@ Structure of a checklist collection entry:
 }
 
 ```
+
+
+<b>GITHUB:</b> https://github.com/UMCompass/Horizon
