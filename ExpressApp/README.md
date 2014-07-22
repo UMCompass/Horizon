@@ -1,6 +1,7 @@
 DB USAGE
 =========
 
+[ ![Codeship Status for UMCompass/Horizon](https://www.codeship.io/projects/ee5895b0-f38c-0131-703c-46df43419009/status)](https://www.codeship.io/projects/27910)
 
 <p>The folder containing the database that was used is now included. The admin database was used(default when you don't specify). User information is stored in the users collection. Checklist information is stored in the checklist collection.</p>
 
